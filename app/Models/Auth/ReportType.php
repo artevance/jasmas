@@ -12,10 +12,10 @@ class ReportType extends Model
     public $timestamps = false;
 
     /**
-     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
-    public function modules()
+    public function reports()
     {
-        return $this->belongsToMany(Module::class)->using(Report::class);
+        return $this->hasMany(Report::class);
     }
 }

@@ -2,12 +2,28 @@
 
 namespace App\Models\Auth;
 
-use Illuminate\Database\Eloquent\Relations\Pivot;
+use Illuminate\Database\Eloquent\Model;
 
-class Report extends Pivot
+class Report extends Model
 {
     /**
      * @var boolean
      */
-    public $incrementing = true;
+    public $timestamps = false;
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function module()
+    {
+        return $this->belongsTo(Module::class);
+    }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function reportType()
+    {
+        return $this->belongsTo(ReportType::class);
+    }
 }
