@@ -10,7 +10,7 @@ class RefBlueprint implements BlueprintContract
     /**
      * @return \Closure
      */
-    public static function register()
+    public static function register() : Closure
     {
         return (
             function () {
