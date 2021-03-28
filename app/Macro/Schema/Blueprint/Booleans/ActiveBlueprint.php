@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Macro\Schema\Blueprints\Booleans;
+namespace App\Macro\Schema\Blueprint\Booleans;
 
 use App\Foundation\Macro\Schema\BlueprintContract;
 use Closure;
