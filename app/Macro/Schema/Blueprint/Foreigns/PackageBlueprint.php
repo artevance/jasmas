@@ -10,7 +10,7 @@ class PackageBlueprint implements BlueprintContract
     /**
      * @return \Closure
      */
-    public function register() : Closure
+    public static function register() : Closure
     {
         return (
             function ($fieldName = 'package_id') {

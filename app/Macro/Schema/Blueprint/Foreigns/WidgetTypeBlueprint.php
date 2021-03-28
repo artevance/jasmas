@@ -10,7 +10,7 @@ class WidgetTypeBlueprint implements BlueprintContract
     /**
      * @return \Closure
      */
-    public function register() : Closure
+    public static function register() : Closure
     {
         return (
             function ($fieldName = 'widget_type_id') {

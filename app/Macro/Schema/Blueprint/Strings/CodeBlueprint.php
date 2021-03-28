@@ -10,7 +10,7 @@ class CodeBlueprint implements BlueprintContract
     /**
      * @return \Closure
      */
-    public function register()
+    public static function register()
     {
         return (
             function () {
