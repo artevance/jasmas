@@ -2,12 +2,28 @@
 
 namespace App\Models\Auth;
 
-use Illuminate\Database\Eloquent\Relations\Pivot;
+use Illuminate\Database\Eloquent\Model;
 
-class Widget extends Pivot
+class Widget extends Model
 {
     /**
      * @var boolean
      */
-    public $incrementing = true;
+    public $timestamps = false;
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function module()
+    {
+        return $this->belongsTo(Module::class);
+    }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function widgetType()
+    {
+        return $this->belongsTo(WidgetType::class);
+    }
 }

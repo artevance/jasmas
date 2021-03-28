@@ -12,10 +12,10 @@ class WidgetType extends Model
     public $timestamps = false;
 
     /**
-     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
-    public function modules()
+    public function widgets()
     {
-        return $this->belongsToMany(Module::class)->using(Widget::class);
+        return $this->hasMany(Widget::class);
     }
 }
