@@ -10,7 +10,7 @@ class Kernel
     public static array $schema = [
         'blueprints' => [
             // Booleans
-            'active' => Schema\Blueprint\Foreigns\ActiveBlueprint::class,
+            'active' => Schema\Blueprint\Booleans\ActiveBlueprint::class,
             // Foreigns
             'action' => Schema\Blueprint\Foreigns\ActionBlueprint::class,
             'feature' => Schema\Blueprint\Foreigns\FeatureBlueprint::class,
