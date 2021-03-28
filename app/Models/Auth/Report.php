@@ -26,4 +26,12 @@ class Report extends Model
     {
         return $this->belongsTo(ReportType::class);
     }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
+     */
+    public function roles()
+    {
+        return $this->belongsToMany(Role::class, 'role_report');
+    }
 }
