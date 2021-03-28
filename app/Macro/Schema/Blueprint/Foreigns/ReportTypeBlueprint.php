@@ -13,9 +13,10 @@ class ReportTypeBlueprint implements BlueprintContract
     public static function register() : Closure
     {
         return (
-            function ($fieldName = 'report_type_id') {
-                return $this->foreignId('report_type_id')
-                    ->constrained()
+            function ($fieldName = 'report_type_id', $nullable = false) {
+                $table = $this->foreignId('report_type_id');
+                if ($nullable) $table->nullable();
+                return $table->constrained()
                     ->onUpdate('cascade');
             }
         );

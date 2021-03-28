@@ -13,9 +13,10 @@ class PackageBlueprint implements BlueprintContract
     public static function register() : Closure
     {
         return (
-            function ($fieldName = 'package_id') {
-                return $this->foreignId('package_id')
-                    ->constrained()
+            function ($fieldName = 'package_id', $nullable = false) {
+                $table = $this->foreignId('package_id');
+                if ($nullable) $table->nullable();
+                return $table->constrained()
                     ->onUpdate('cascade');
             }
         );

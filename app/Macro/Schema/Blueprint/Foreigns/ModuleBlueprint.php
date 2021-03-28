@@ -13,9 +13,10 @@ class ModuleBlueprint implements BlueprintContract
     public static function register() : Closure
     {
         return (
-            function ($fieldName = 'module_id') {
-                return $this->foreignId('module_id')
-                    ->constrained()
+            function ($fieldName = 'module_id', $nullable = false) {
+                $table = $this->foreignId('module_id');
+                if ($nullable) $table->nullable();
+                return $table->constrained()
                     ->onUpdate('cascade');
             }
         );

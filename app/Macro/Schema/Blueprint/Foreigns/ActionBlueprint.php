@@ -13,9 +13,10 @@ class ActionBlueprint implements BlueprintContract
     public static function register() : Closure
     {
         return (
-            function ($fieldName = 'action_id') {
-                return $this->foreignId('action_id')
-                    ->constrained()
+            function ($fieldName = 'action_id', $nullable = false) {
+                $table = $this->foreignId('action_id');
+                if ($nullable) $table->nullable();
+                return $table->constrained()
                     ->onUpdate('cascade');
             }
         );
