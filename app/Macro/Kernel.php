@@ -11,6 +11,8 @@ class Kernel
         'blueprints' => [
             // Booleans
             'active' => Schema\Blueprint\Booleans\ActiveBlueprint::class,
+            'hidden' => Schema\Blueprint\Booleans\HiddenBlueprint::class,
+            'locked' => Schema\Blueprint\Booleans\LockedBlueprint::class,
             // Foreigns
             'action' => Schema\Blueprint\Foreigns\ActionBlueprint::class,
             'feature' => Schema\Blueprint\Foreigns\FeatureBlueprint::class,
