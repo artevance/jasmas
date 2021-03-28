@@ -12,10 +12,10 @@ class Action extends Model
     public $timestamps = false;
 
     /**
-     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
-    public function modules()
+    public function features()
     {
-        return $this->belongsToMany(Module::class)->using(Feature::class);
+        return $this->hasMany(Feature::class);
     }
 }
