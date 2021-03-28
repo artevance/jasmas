@@ -30,6 +30,7 @@ class CreateRolesAndUsers extends Migration
             $table->active();
             $table->locked();
             $table->hidden();
+            $table->boolean('guest');
         });
 
         Schema::table('roles', function (Blueprint $table) {
