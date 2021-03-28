@@ -20,10 +20,26 @@ class Package extends Model
     }
 
     /**
-     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
-    public function actions()
+    public function features()
     {
-        return $this->belongsToMany(Action::class)->using(Feature::class);
+        return $this->hasMany(Feature::class);
+    }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function reports()
+    {
+        return $this->hasMany(Report::class);
+    }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function widgets()
+    {
+        return $this->hasMany(Widget::class);
     }
 }
