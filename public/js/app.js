@@ -1869,6 +1869,385 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/SubmissionFormComponent.vue?vue&type=script&lang=js&":
+/*!******************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/SubmissionFormComponent.vue?vue&type=script&lang=js& ***!
+  \******************************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  data: function data() {
+    return {
+      subForm: {
+        active: '1',
+        breakdowns: [{
+          id: '1',
+          number: '1.',
+          title: 'Surat Permohonan'
+        }, {
+          id: '2',
+          number: '2.',
+          title: 'Proposal'
+        }, {
+          id: '3',
+          number: '3.',
+          title: 'Pengesahan Kelembagaan POKMAS',
+          children: [{
+            id: '3a',
+            number: 'a.',
+            title: 'Surat Pengesahan / Penetapan SKPD Kab / Kota / Camat'
+          }, {
+            id: '3b',
+            number: 'b.',
+            title: 'Surat Keterangan Domisili (Desa)'
+          }, {
+            id: '3c',
+            number: 'c.',
+            title: 'Mempunyai kepengurusan yang jelas'
+          }, {
+            id: '3d',
+            number: 'd.',
+            title: 'Berpendudukan di wilayah administrasi'
+          }]
+        }, {
+          id: '4',
+          number: '4.',
+          title: 'Surat Pernyataan bermaterai Rp. 6000',
+          children: [{
+            'id': '4a',
+            'number': 'a.',
+            'title': 'Tidak Menerima Bantuan dari APBD Provinsi Jawa Timur 1 (satu) Tahun Anggaran sebelumnya'
+          }, {
+            'id': '4b',
+            'number': 'b.',
+            'title': 'Tidak Menerima Bantuan Hibah dari APBD Provinsi Jawa Timur secara terus menerus, kecuali ditentukan peraturan perundang-undangan'
+          }]
+        }, {
+          id: '5',
+          number: '5.',
+          title: 'Surat Pernyataan Kesiapan Lahan tidak bersengketa diketahui oleh Pejabat setempat (Kades/Lurah)'
+        }, {
+          id: '6',
+          number: '6.',
+          title: 'Fotocopy KTP Struktur Kepengurusan Pokmas',
+          children: [{
+            id: '6a',
+            number: 'a.',
+            title: 'Ketua'
+          }, {
+            id: '6b',
+            number: 'b.',
+            title: 'Sekretaris'
+          }, {
+            id: '6c',
+            number: 'c.',
+            title: 'Bendahara'
+          }, {
+            id: '6d',
+            number: 'd.',
+            title: 'Anggota'
+          }]
+        }, {
+          id: '7',
+          number: '7.',
+          title: 'Denah Lokasi Pekerjaan'
+        }, {
+          id: '8',
+          number: '8.',
+          title: 'Foto Lokasi Kegiatan (Foto 0%)'
+        }, {
+          id: '9',
+          number: '9.',
+          title: 'Rencana Anggaran Biaya (RAB) yang di tanda tangani ketua Pokmas dan Kepala Desa',
+          children: [{
+            id: '9a',
+            number: 'a.',
+            title: 'Nilai RAB'
+          }]
+        }, {
+          id: '10',
+          number: '10.',
+          title: 'Nomor Rekening'
+        }]
+      }
+    };
+  },
+  methods: {
+    toggleSubForm: function toggleSubForm(id) {
+      this.subForm.active = id;
+    }
+  }
+});
+
+/***/ }),
+
 /***/ "./resources/js/app.js":
 /*!*****************************!*\
   !*** ./resources/js/app.js ***!
@@ -1894,6 +2273,9 @@ window.Vue = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm.js"
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
 
 Vue.component('example-component', __webpack_require__(/*! ./components/ExampleComponent.vue */ "./resources/js/components/ExampleComponent.vue").default);
+Vue.component('guest-navbar-component', __webpack_require__(/*! ./components/GuestNavbarComponent.vue */ "./resources/js/components/GuestNavbarComponent.vue").default);
+Vue.component('submission-form-component', __webpack_require__(/*! ./components/SubmissionFormComponent.vue */ "./resources/js/components/SubmissionFormComponent.vue").default);
+Vue.component('file-picker-component', __webpack_require__(/*! ./components/FilePickerComponent.vue */ "./resources/js/components/FilePickerComponent.vue").default);
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application
@@ -37372,6 +37754,119 @@ component.options.__file = "resources/js/components/ExampleComponent.vue"
 
 /***/ }),
 
+/***/ "./resources/js/components/FilePickerComponent.vue":
+/*!*********************************************************!*\
+  !*** ./resources/js/components/FilePickerComponent.vue ***!
+  \*********************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _FilePickerComponent_vue_vue_type_template_id_7a658950___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./FilePickerComponent.vue?vue&type=template&id=7a658950& */ "./resources/js/components/FilePickerComponent.vue?vue&type=template&id=7a658950&");
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! !../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+var script = {}
+
+
+/* normalize component */
+;
+var component = (0,_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_1__.default)(
+  script,
+  _FilePickerComponent_vue_vue_type_template_id_7a658950___WEBPACK_IMPORTED_MODULE_0__.render,
+  _FilePickerComponent_vue_vue_type_template_id_7a658950___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns,
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/components/FilePickerComponent.vue"
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/components/GuestNavbarComponent.vue":
+/*!**********************************************************!*\
+  !*** ./resources/js/components/GuestNavbarComponent.vue ***!
+  \**********************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _GuestNavbarComponent_vue_vue_type_template_id_5a545040___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./GuestNavbarComponent.vue?vue&type=template&id=5a545040& */ "./resources/js/components/GuestNavbarComponent.vue?vue&type=template&id=5a545040&");
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! !../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+var script = {}
+
+
+/* normalize component */
+;
+var component = (0,_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_1__.default)(
+  script,
+  _GuestNavbarComponent_vue_vue_type_template_id_5a545040___WEBPACK_IMPORTED_MODULE_0__.render,
+  _GuestNavbarComponent_vue_vue_type_template_id_5a545040___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns,
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/components/GuestNavbarComponent.vue"
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/components/SubmissionFormComponent.vue":
+/*!*************************************************************!*\
+  !*** ./resources/js/components/SubmissionFormComponent.vue ***!
+  \*************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _SubmissionFormComponent_vue_vue_type_template_id_29f9cd92___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./SubmissionFormComponent.vue?vue&type=template&id=29f9cd92& */ "./resources/js/components/SubmissionFormComponent.vue?vue&type=template&id=29f9cd92&");
+/* harmony import */ var _SubmissionFormComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./SubmissionFormComponent.vue?vue&type=script&lang=js& */ "./resources/js/components/SubmissionFormComponent.vue?vue&type=script&lang=js&");
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! !../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+;
+var component = (0,_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__.default)(
+  _SubmissionFormComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__.default,
+  _SubmissionFormComponent_vue_vue_type_template_id_29f9cd92___WEBPACK_IMPORTED_MODULE_0__.render,
+  _SubmissionFormComponent_vue_vue_type_template_id_29f9cd92___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns,
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/components/SubmissionFormComponent.vue"
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (component.exports);
+
+/***/ }),
+
 /***/ "./resources/js/components/ExampleComponent.vue?vue&type=script&lang=js&":
 /*!*******************************************************************************!*\
   !*** ./resources/js/components/ExampleComponent.vue?vue&type=script&lang=js& ***!
@@ -37388,6 +37883,22 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/js/components/SubmissionFormComponent.vue?vue&type=script&lang=js&":
+/*!**************************************************************************************!*\
+  !*** ./resources/js/components/SubmissionFormComponent.vue?vue&type=script&lang=js& ***!
+  \**************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_SubmissionFormComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./SubmissionFormComponent.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/SubmissionFormComponent.vue?vue&type=script&lang=js&");
+ /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_SubmissionFormComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__.default); 
+
+/***/ }),
+
 /***/ "./resources/js/components/ExampleComponent.vue?vue&type=template&id=299e239e&":
 /*!*************************************************************************************!*\
   !*** ./resources/js/components/ExampleComponent.vue?vue&type=template&id=299e239e& ***!
@@ -37401,6 +37912,57 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "staticRenderFns": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ExampleComponent_vue_vue_type_template_id_299e239e___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns)
 /* harmony export */ });
 /* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ExampleComponent_vue_vue_type_template_id_299e239e___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./ExampleComponent.vue?vue&type=template&id=299e239e& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/ExampleComponent.vue?vue&type=template&id=299e239e&");
+
+
+/***/ }),
+
+/***/ "./resources/js/components/FilePickerComponent.vue?vue&type=template&id=7a658950&":
+/*!****************************************************************************************!*\
+  !*** ./resources/js/components/FilePickerComponent.vue?vue&type=template&id=7a658950& ***!
+  \****************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_FilePickerComponent_vue_vue_type_template_id_7a658950___WEBPACK_IMPORTED_MODULE_0__.render),
+/* harmony export */   "staticRenderFns": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_FilePickerComponent_vue_vue_type_template_id_7a658950___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns)
+/* harmony export */ });
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_FilePickerComponent_vue_vue_type_template_id_7a658950___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./FilePickerComponent.vue?vue&type=template&id=7a658950& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/FilePickerComponent.vue?vue&type=template&id=7a658950&");
+
+
+/***/ }),
+
+/***/ "./resources/js/components/GuestNavbarComponent.vue?vue&type=template&id=5a545040&":
+/*!*****************************************************************************************!*\
+  !*** ./resources/js/components/GuestNavbarComponent.vue?vue&type=template&id=5a545040& ***!
+  \*****************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_GuestNavbarComponent_vue_vue_type_template_id_5a545040___WEBPACK_IMPORTED_MODULE_0__.render),
+/* harmony export */   "staticRenderFns": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_GuestNavbarComponent_vue_vue_type_template_id_5a545040___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns)
+/* harmony export */ });
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_GuestNavbarComponent_vue_vue_type_template_id_5a545040___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./GuestNavbarComponent.vue?vue&type=template&id=5a545040& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/GuestNavbarComponent.vue?vue&type=template&id=5a545040&");
+
+
+/***/ }),
+
+/***/ "./resources/js/components/SubmissionFormComponent.vue?vue&type=template&id=29f9cd92&":
+/*!********************************************************************************************!*\
+  !*** ./resources/js/components/SubmissionFormComponent.vue?vue&type=template&id=29f9cd92& ***!
+  \********************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_SubmissionFormComponent_vue_vue_type_template_id_29f9cd92___WEBPACK_IMPORTED_MODULE_0__.render),
+/* harmony export */   "staticRenderFns": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_SubmissionFormComponent_vue_vue_type_template_id_29f9cd92___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns)
+/* harmony export */ });
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_SubmissionFormComponent_vue_vue_type_template_id_29f9cd92___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./SubmissionFormComponent.vue?vue&type=template&id=29f9cd92& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/SubmissionFormComponent.vue?vue&type=template&id=29f9cd92&");
 
 
 /***/ }),
@@ -37444,6 +38006,713 @@ var staticRenderFns = [
           ])
         ])
       ])
+    ])
+  }
+]
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/FilePickerComponent.vue?vue&type=template&id=7a658950&":
+/*!*******************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/FilePickerComponent.vue?vue&type=template&id=7a658950& ***!
+  \*******************************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* binding */ render),
+/* harmony export */   "staticRenderFns": () => (/* binding */ staticRenderFns)
+/* harmony export */ });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "div",
+    [[_c("input", { staticClass: "form-control", attrs: { type: "file" } })]],
+    2
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/GuestNavbarComponent.vue?vue&type=template&id=5a545040&":
+/*!********************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/GuestNavbarComponent.vue?vue&type=template&id=5a545040& ***!
+  \********************************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* binding */ render),
+/* harmony export */   "staticRenderFns": () => (/* binding */ staticRenderFns)
+/* harmony export */ });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _vm._m(0)
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "nav",
+      { staticClass: "navbar navbar-expand-sm navbar-light bg-light" },
+      [
+        _c("a", { staticClass: "navbar-brand", attrs: { href: "#" } }, [
+          _vm._v("SIA")
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "collapse navbar-collapse" }, [
+          _c("ul", { staticClass: "navbar-nav ml-auto" }, [
+            _c("li", { staticClass: "nav-item active" }, [
+              _c("a", { staticClass: "nav-link", attrs: { href: "/login" } }, [
+                _vm._v("Login")
+              ])
+            ])
+          ])
+        ])
+      ]
+    )
+  }
+]
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/SubmissionFormComponent.vue?vue&type=template&id=29f9cd92&":
+/*!***********************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/SubmissionFormComponent.vue?vue&type=template&id=29f9cd92& ***!
+  \***********************************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* binding */ render),
+/* harmony export */   "staticRenderFns": () => (/* binding */ staticRenderFns)
+/* harmony export */ });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("form", { staticClass: "my-4" }, [
+    _c("div", { staticClass: "row" }, [
+      _c("div", { staticClass: "col-6 border p-3" }, [
+        _vm._m(0),
+        _vm._v(" "),
+        _vm._m(1),
+        _vm._v(" "),
+        _vm._m(2),
+        _vm._v(" "),
+        _c("div", { staticClass: "table-responsive" }, [
+          _c("table", { staticClass: "table table-hover table-bordered" }, [
+            _c(
+              "tbody",
+              [
+                _vm._l(_vm.subForm.breakdowns, function(subFormBreakdown) {
+                  return [
+                    subFormBreakdown.children
+                      ? [
+                          _c(
+                            "tr",
+                            {
+                              key: subFormBreakdown.id,
+                              class: {
+                                "table-active":
+                                  _vm.subForm.active == subFormBreakdown.id
+                              }
+                            },
+                            [
+                              _c("td", [
+                                _vm._v(_vm._s(subFormBreakdown.number))
+                              ]),
+                              _vm._v(" "),
+                              _c("td", { attrs: { colspan: "2" } }, [
+                                _vm._v(_vm._s(subFormBreakdown.title))
+                              ]),
+                              _vm._v(" "),
+                              _c("td")
+                            ]
+                          ),
+                          _vm._v(" "),
+                          _vm._l(subFormBreakdown.children, function(
+                            subFormBreakdownChild
+                          ) {
+                            return _c(
+                              "tr",
+                              {
+                                key: subFormBreakdownChild.id,
+                                class: {
+                                  "table-active":
+                                    _vm.subForm.active ==
+                                    subFormBreakdownChild.id
+                                },
+                                on: {
+                                  click: function($event) {
+                                    return _vm.toggleSubForm(
+                                      subFormBreakdownChild.id
+                                    )
+                                  }
+                                }
+                              },
+                              [
+                                _c("td"),
+                                _vm._v(" "),
+                                _c("td", { staticStyle: { width: "5%" } }, [
+                                  _vm._v(_vm._s(subFormBreakdownChild.number))
+                                ]),
+                                _vm._v(" "),
+                                _c("td", [
+                                  _vm._v(_vm._s(subFormBreakdownChild.title))
+                                ]),
+                                _vm._v(" "),
+                                _c("td")
+                              ]
+                            )
+                          })
+                        ]
+                      : _c(
+                          "tr",
+                          {
+                            key: subFormBreakdown.id,
+                            class: {
+                              "table-active":
+                                _vm.subForm.active == subFormBreakdown.id
+                            },
+                            on: {
+                              click: function($event) {
+                                return _vm.toggleSubForm(subFormBreakdown.id)
+                              }
+                            }
+                          },
+                          [
+                            _c("td", [_vm._v(_vm._s(subFormBreakdown.number))]),
+                            _vm._v(" "),
+                            _c("td", { attrs: { colspan: "2" } }, [
+                              _vm._v(_vm._s(subFormBreakdown.title))
+                            ]),
+                            _vm._v(" "),
+                            _c("td")
+                          ]
+                        )
+                  ]
+                })
+              ],
+              2
+            )
+          ])
+        ]),
+        _vm._v(" "),
+        _c("button", { staticClass: "btn btn-primary btn-block" }, [
+          _vm._v("Submit")
+        ])
+      ]),
+      _vm._v(" "),
+      _c(
+        "div",
+        { staticClass: "col-6 border p-3" },
+        [
+          _vm.subForm.active == "1"
+            ? [
+                _vm._m(3),
+                _vm._v(" "),
+                _vm._m(4),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  { staticClass: "form-group" },
+                  [
+                    _c("label", [_vm._v("Surat Permohonan")]),
+                    _vm._v(" "),
+                    _c("file-picker-component")
+                  ],
+                  1
+                )
+              ]
+            : _vm.subForm.active == "2"
+            ? [
+                _vm._m(5),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  { staticClass: "form-group" },
+                  [
+                    _c("label", [_vm._v("Proposal")]),
+                    _vm._v(" "),
+                    _c("file-picker-component")
+                  ],
+                  1
+                )
+              ]
+            : _vm.subForm.active == "3a"
+            ? [
+                _c(
+                  "div",
+                  { staticClass: "form-group" },
+                  [
+                    _c("label", [
+                      _vm._v(
+                        "Surat Pengesahan / Penetapan SKPD Kab / Kota / Camat"
+                      )
+                    ]),
+                    _vm._v(" "),
+                    _c("file-picker-component")
+                  ],
+                  1
+                )
+              ]
+            : _vm.subForm.active == "3b"
+            ? [
+                _vm._m(6),
+                _vm._v(" "),
+                _vm._m(7),
+                _vm._v(" "),
+                _vm._m(8),
+                _vm._v(" "),
+                _vm._m(9),
+                _vm._v(" "),
+                _vm._m(10),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  { staticClass: "form-group" },
+                  [
+                    _c("label", [_vm._v("Surat Keterangan Domisili (Desa)")]),
+                    _vm._v(" "),
+                    _c("file-picker-component")
+                  ],
+                  1
+                )
+              ]
+            : _vm.subForm.active == "3c"
+            ? [
+                _vm._m(11),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  { staticClass: "form-group" },
+                  [
+                    _c("label", [_vm._v("Mempunyai kepengurusan yang jelas")]),
+                    _vm._v(" "),
+                    _c("file-picker-component")
+                  ],
+                  1
+                )
+              ]
+            : _vm.subForm.active == "3d"
+            ? [
+                _c(
+                  "div",
+                  { staticClass: "form-group" },
+                  [
+                    _c("label", [
+                      _vm._v("Berpendudukan di wilayah administrasi")
+                    ]),
+                    _vm._v(" "),
+                    _c("file-picker-component")
+                  ],
+                  1
+                )
+              ]
+            : _vm.subForm.active == "4a"
+            ? [
+                _c(
+                  "div",
+                  { staticClass: "form-group" },
+                  [
+                    _c("label", [
+                      _vm._v(
+                        "Surat Pernyataan Tidak Menerima Bantuan dari APBD Provinsi Jawa Timur 1 (satu) Tahun Anggaran sebelumnya"
+                      )
+                    ]),
+                    _vm._v(" "),
+                    _c("file-picker-component")
+                  ],
+                  1
+                )
+              ]
+            : _vm.subForm.active == "4b"
+            ? [
+                _c(
+                  "div",
+                  { staticClass: "form-group" },
+                  [
+                    _c("label", [
+                      _vm._v(
+                        "Surat Pernyataan Tidak Menerima Bantuan Hibah dari APBD Provinsi Jawa Timur secara terus menerus, kecuali ditentukan peraturan perundang-undangan"
+                      )
+                    ]),
+                    _vm._v(" "),
+                    _c("file-picker-component")
+                  ],
+                  1
+                )
+              ]
+            : _vm.subForm.active == "5"
+            ? [
+                _c(
+                  "div",
+                  { staticClass: "form-group" },
+                  [
+                    _c("label", [
+                      _vm._v(
+                        "Surat Pernyataan Kesiapan Lahan tidak bersengketa diketahui oleh Pejabat setempat (Kades/Lurah)"
+                      )
+                    ]),
+                    _vm._v(" "),
+                    _c("file-picker-component")
+                  ],
+                  1
+                )
+              ]
+            : _vm.subForm.active == "6a"
+            ? [
+                _c(
+                  "div",
+                  { staticClass: "form-group" },
+                  [
+                    _c("label", [_vm._v("KTP Ketua")]),
+                    _vm._v(" "),
+                    _c("file-picker-component")
+                  ],
+                  1
+                ),
+                _vm._v(" "),
+                _vm._m(12),
+                _vm._v(" "),
+                _vm._m(13)
+              ]
+            : _vm.subForm.active == "6b"
+            ? [
+                _c(
+                  "div",
+                  { staticClass: "form-group" },
+                  [
+                    _c("label", [_vm._v("KTP Sekretaris")]),
+                    _vm._v(" "),
+                    _c("file-picker-component")
+                  ],
+                  1
+                ),
+                _vm._v(" "),
+                _vm._m(14),
+                _vm._v(" "),
+                _vm._m(15)
+              ]
+            : _vm.subForm.active == "6c"
+            ? [
+                _c(
+                  "div",
+                  { staticClass: "form-group" },
+                  [
+                    _c("label", [_vm._v("KTP Bendahara")]),
+                    _vm._v(" "),
+                    _c("file-picker-component")
+                  ],
+                  1
+                ),
+                _vm._v(" "),
+                _vm._m(16),
+                _vm._v(" "),
+                _vm._m(17)
+              ]
+            : _vm.subForm.active == "6d"
+            ? [
+                _c(
+                  "div",
+                  { staticClass: "form-group" },
+                  [
+                    _c("label", [_vm._v("KTP Anggota")]),
+                    _vm._v(" "),
+                    _c("file-picker-component")
+                  ],
+                  1
+                )
+              ]
+            : _vm.subForm.active == "7"
+            ? [
+                _c(
+                  "div",
+                  { staticClass: "form-group" },
+                  [
+                    _c("label", [_vm._v("Denah Lokasi Pekerjaan")]),
+                    _vm._v(" "),
+                    _c("file-picker-component")
+                  ],
+                  1
+                )
+              ]
+            : _vm.subForm.active == "8"
+            ? [
+                _c(
+                  "div",
+                  { staticClass: "form-group" },
+                  [
+                    _c("label", [_vm._v("Foto Lokasi Kegiatan (Foto 0%)")]),
+                    _vm._v(" "),
+                    _c("file-picker-component")
+                  ],
+                  1
+                )
+              ]
+            : _vm.subForm.active == "9a"
+            ? [
+                _vm._m(18),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  { staticClass: "form-group" },
+                  [
+                    _c("label", [_vm._v("Upload RAB")]),
+                    _vm._v(" "),
+                    _c("file-picker-component")
+                  ],
+                  1
+                )
+              ]
+            : _vm.subForm.active == "10"
+            ? [_vm._m(19), _vm._v(" "), _vm._m(20), _vm._v(" "), _vm._m(21)]
+            : _vm._e()
+        ],
+        2
+      )
+    ])
+  ])
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "form-group" }, [
+      _c("label", [_vm._v("Jenis Kegiatan")]),
+      _vm._v(" "),
+      _c("input", { staticClass: "form-control", attrs: { type: "text" } })
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "form-group" }, [
+      _c("label", [_vm._v("Catatan")]),
+      _vm._v(" "),
+      _c("input", { staticClass: "form-control", attrs: { type: "text" } })
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "form-group" }, [
+      _c("label", [_vm._v("Disposisi")]),
+      _vm._v(" "),
+      _c("input", { staticClass: "form-control", attrs: { type: "text" } })
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "form-group" }, [
+      _c("label", [_vm._v("Nomor Surat Permohonan")]),
+      _vm._v(" "),
+      _c("input", { staticClass: "form-control", attrs: { type: "text" } })
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "form-group" }, [
+      _c("label", [_vm._v("Tanggal Surat")]),
+      _vm._v(" "),
+      _c("input", { staticClass: "form-control", attrs: { type: "text" } })
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "form-group" }, [
+      _c("label", [_vm._v("Afiliasi")]),
+      _vm._v(" "),
+      _c("input", { staticClass: "form-control", attrs: { type: "text" } })
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "form-group" }, [
+      _c("label", [_vm._v("Alamat Lengkap")]),
+      _vm._v(" "),
+      _c("input", { staticClass: "form-control", attrs: { type: "text" } })
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "form-group" }, [
+      _c("label", [_vm._v("Provinsi")]),
+      _vm._v(" "),
+      _c("select", { staticClass: "form-control" })
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "form-group" }, [
+      _c("label", [_vm._v("Kab / Kota")]),
+      _vm._v(" "),
+      _c("select", { staticClass: "form-control" })
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "form-group" }, [
+      _c("label", [_vm._v("Kecamatan")]),
+      _vm._v(" "),
+      _c("select", { staticClass: "form-control" })
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "form-group" }, [
+      _c("label", [_vm._v("Kelurahan")]),
+      _vm._v(" "),
+      _c("select", { staticClass: "form-control" })
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "form-group" }, [
+      _c("label", [_vm._v("Nama Pokmas")]),
+      _vm._v(" "),
+      _c("input", { staticClass: "form-control", attrs: { type: "text" } })
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "form-group" }, [
+      _c("label", [_vm._v("Nama")]),
+      _vm._v(" "),
+      _c("input", { staticClass: "form-control", attrs: { type: "text" } })
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "form-group" }, [
+      _c("label", [_vm._v("No. Telp")]),
+      _vm._v(" "),
+      _c("input", { staticClass: "form-control", attrs: { type: "text" } })
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "form-group" }, [
+      _c("label", [_vm._v("Nama")]),
+      _vm._v(" "),
+      _c("input", { staticClass: "form-control", attrs: { type: "text" } })
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "form-group" }, [
+      _c("label", [_vm._v("No. Telp")]),
+      _vm._v(" "),
+      _c("input", { staticClass: "form-control", attrs: { type: "text" } })
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "form-group" }, [
+      _c("label", [_vm._v("Nama")]),
+      _vm._v(" "),
+      _c("input", { staticClass: "form-control", attrs: { type: "text" } })
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "form-group" }, [
+      _c("label", [_vm._v("No. Telp")]),
+      _vm._v(" "),
+      _c("input", { staticClass: "form-control", attrs: { type: "text" } })
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "form-group" }, [
+      _c("label", [_vm._v("Nilai RAB")]),
+      _vm._v(" "),
+      _c("input", { staticClass: "form-control", attrs: { type: "number" } })
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "form-group" }, [
+      _c("label", [_vm._v("Bank")]),
+      _vm._v(" "),
+      _c("select", { staticClass: "form-control" })
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "form-group" }, [
+      _c("label", [_vm._v("Nomor Rekening")]),
+      _vm._v(" "),
+      _c("input", { staticClass: "form-control", attrs: { type: "text" } })
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "form-group" }, [
+      _c("label", [_vm._v("Atas Nama")]),
+      _vm._v(" "),
+      _c("input", { staticClass: "form-control", attrs: { type: "text" } })
     ])
   }
 ]
