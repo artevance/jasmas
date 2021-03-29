@@ -2211,6 +2211,22 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
     return {
@@ -2310,7 +2326,7 @@ __webpack_require__.r(__webpack_exports__);
         data: {
           'application_letter': {
             'number': '',
-            'date': null,
+            'date': '',
             'file_id': null
           },
           'proposal_letter': {
@@ -2362,21 +2378,24 @@ __webpack_require__.r(__webpack_exports__);
           'member': {
             'file_id': null
           },
-          'site_plan': {
+          'location': {
             'file_id': null
           },
-          'activity_photo': {
+          'activity': {
             'file_id': null
           },
           'budget_plan': {
             'file_id': null,
-            'value': null
+            'value': 0
           },
           'bank_account': {
             'bank_id': null,
             'number': '',
-            'owner': ''
+            'name': ''
           }
+        },
+        state: {
+          success: null
         }
       }
     };
@@ -2384,6 +2403,87 @@ __webpack_require__.r(__webpack_exports__);
   methods: {
     toggleSubForm: function toggleSubForm(id) {
       this.subForm.active = id;
+    },
+    submit: function submit() {
+      var _this = this;
+
+      this.form.state.success = null;
+      axios.post('/ajax/jasmas/people_aspiration', this.form.data).then(function (res) {
+        _this.form.state.success = true;
+        _this.form.data = {
+          'application_letter': {
+            'number': '',
+            'date': '',
+            'file_id': null
+          },
+          'proposal_letter': {
+            'affiliation': '',
+            'file_id': null
+          },
+          'ratification': {
+            'file_id': null
+          },
+          'domicile': {
+            'address': '',
+            'province_id': null,
+            'city_id': null,
+            'district_id': null,
+            'subdistrict_id': null,
+            'file_id': null
+          },
+          'pokmas': {
+            'name': '',
+            'file_id': null
+          },
+          'administrative_residence': {
+            'file_id': null
+          },
+          'aid': {
+            'file_id': null
+          },
+          'grant': {
+            'file_id': null
+          },
+          'land_readiness': {
+            'file_id': null
+          },
+          'chairman': {
+            'file_id': null,
+            'name': '',
+            'phone': ''
+          },
+          'secretary': {
+            'file_id': null,
+            'name': '',
+            'phone': ''
+          },
+          'treasurer': {
+            'file_id': null,
+            'name': '',
+            'phone': ''
+          },
+          'member': {
+            'file_id': null
+          },
+          'location': {
+            'file_id': null
+          },
+          'activity': {
+            'file_id': null
+          },
+          'budget_plan': {
+            'file_id': null,
+            'value': 0
+          },
+          'bank_account': {
+            'bank_id': null,
+            'number': '',
+            'name': ''
+          }
+        };
+      })["catch"](function (err) {
+        _this.form.state.success = false;
+      });
     }
   }
 });
@@ -38278,31 +38378,211 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("form", { staticClass: "my-4" }, [
-    _c("div", { staticClass: "row" }, [
-      _c("div", { staticClass: "col-6 border p-3" }, [
-        _vm._m(0),
-        _vm._v(" "),
-        _vm._m(1),
-        _vm._v(" "),
-        _vm._m(2),
-        _vm._v(" "),
-        _c("div", { staticClass: "table-responsive" }, [
-          _c("table", { staticClass: "table table-hover table-bordered" }, [
-            _c(
-              "tbody",
-              [
-                _vm._l(_vm.subForm.breakdowns, function(subFormBreakdown) {
-                  return [
-                    subFormBreakdown.children
-                      ? [
-                          _c(
+  return _c(
+    "form",
+    {
+      staticClass: "my-4",
+      on: {
+        submit: function($event) {
+          $event.preventDefault()
+          return _vm.submit($event)
+        }
+      }
+    },
+    [
+      _c("div", { staticClass: "row" }, [
+        _c("div", { staticClass: "col" }, [
+          _vm.form.state.success == true
+            ? _c(
+                "div",
+                {
+                  staticClass: "alert alert-success alert-dismissible fade show"
+                },
+                [
+                  _vm._v(
+                    "\n                Data berhasil disubmit\n                "
+                  ),
+                  _vm._m(0)
+                ]
+              )
+            : _vm._e(),
+          _vm._v(" "),
+          _vm.form.state.success == false
+            ? _c(
+                "div",
+                {
+                  staticClass: "alert alert-danger alert-dismissible fade show"
+                },
+                [
+                  _vm._v(
+                    "\n                Data gagal disubmit\n                "
+                  ),
+                  _vm._m(1)
+                ]
+              )
+            : _vm._e()
+        ])
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "row" }, [
+        _c("div", { staticClass: "col-6 border p-3" }, [
+          _c("div", { staticClass: "form-group" }, [
+            _c("label", [_vm._v("Jenis Kegiatan")]),
+            _vm._v(" "),
+            _c("input", {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model",
+                  value: _vm.form.data["activity_type"],
+                  expression: "form.data['activity_type']"
+                }
+              ],
+              staticClass: "form-control",
+              attrs: { type: "text" },
+              domProps: { value: _vm.form.data["activity_type"] },
+              on: {
+                input: function($event) {
+                  if ($event.target.composing) {
+                    return
+                  }
+                  _vm.$set(_vm.form.data, "activity_type", $event.target.value)
+                }
+              }
+            })
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "form-group" }, [
+            _c("label", [_vm._v("Catatan")]),
+            _vm._v(" "),
+            _c("input", {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model",
+                  value: _vm.form.data["note"],
+                  expression: "form.data['note']"
+                }
+              ],
+              staticClass: "form-control",
+              attrs: { type: "text" },
+              domProps: { value: _vm.form.data["note"] },
+              on: {
+                input: function($event) {
+                  if ($event.target.composing) {
+                    return
+                  }
+                  _vm.$set(_vm.form.data, "note", $event.target.value)
+                }
+              }
+            })
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "form-group" }, [
+            _c("label", [_vm._v("Disposisi")]),
+            _vm._v(" "),
+            _c("input", {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model",
+                  value: _vm.form.data["disposition"],
+                  expression: "form.data['disposition']"
+                }
+              ],
+              staticClass: "form-control",
+              attrs: { type: "text" },
+              domProps: { value: _vm.form.data["disposition"] },
+              on: {
+                input: function($event) {
+                  if ($event.target.composing) {
+                    return
+                  }
+                  _vm.$set(_vm.form.data, "disposition", $event.target.value)
+                }
+              }
+            })
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "table-responsive" }, [
+            _c("table", { staticClass: "table table-hover table-bordered" }, [
+              _c(
+                "tbody",
+                [
+                  _vm._l(_vm.subForm.breakdowns, function(subFormBreakdown) {
+                    return [
+                      subFormBreakdown.children
+                        ? [
+                            _c(
+                              "tr",
+                              {
+                                key: subFormBreakdown.id,
+                                class: {
+                                  "table-active":
+                                    _vm.subForm.active == subFormBreakdown.id
+                                }
+                              },
+                              [
+                                _c("td", [
+                                  _vm._v(_vm._s(subFormBreakdown.number))
+                                ]),
+                                _vm._v(" "),
+                                _c("td", { attrs: { colspan: "2" } }, [
+                                  _vm._v(_vm._s(subFormBreakdown.title))
+                                ]),
+                                _vm._v(" "),
+                                _c("td")
+                              ]
+                            ),
+                            _vm._v(" "),
+                            _vm._l(subFormBreakdown.children, function(
+                              subFormBreakdownChild
+                            ) {
+                              return _c(
+                                "tr",
+                                {
+                                  key: subFormBreakdownChild.id,
+                                  class: {
+                                    "table-active":
+                                      _vm.subForm.active ==
+                                      subFormBreakdownChild.id
+                                  },
+                                  on: {
+                                    click: function($event) {
+                                      return _vm.toggleSubForm(
+                                        subFormBreakdownChild.id
+                                      )
+                                    }
+                                  }
+                                },
+                                [
+                                  _c("td"),
+                                  _vm._v(" "),
+                                  _c("td", { staticStyle: { width: "5%" } }, [
+                                    _vm._v(_vm._s(subFormBreakdownChild.number))
+                                  ]),
+                                  _vm._v(" "),
+                                  _c("td", [
+                                    _vm._v(_vm._s(subFormBreakdownChild.title))
+                                  ]),
+                                  _vm._v(" "),
+                                  _c("td")
+                                ]
+                              )
+                            })
+                          ]
+                        : _c(
                             "tr",
                             {
                               key: subFormBreakdown.id,
                               class: {
                                 "table-active":
                                   _vm.subForm.active == subFormBreakdown.id
+                              },
+                              on: {
+                                click: function($event) {
+                                  return _vm.toggleSubForm(subFormBreakdown.id)
+                                }
                               }
                             },
                             [
@@ -38316,1108 +38596,1063 @@ var render = function() {
                               _vm._v(" "),
                               _c("td")
                             ]
-                          ),
-                          _vm._v(" "),
-                          _vm._l(subFormBreakdown.children, function(
-                            subFormBreakdownChild
-                          ) {
-                            return _c(
-                              "tr",
-                              {
-                                key: subFormBreakdownChild.id,
-                                class: {
-                                  "table-active":
-                                    _vm.subForm.active ==
-                                    subFormBreakdownChild.id
-                                },
-                                on: {
-                                  click: function($event) {
-                                    return _vm.toggleSubForm(
-                                      subFormBreakdownChild.id
-                                    )
-                                  }
-                                }
-                              },
-                              [
-                                _c("td"),
-                                _vm._v(" "),
-                                _c("td", { staticStyle: { width: "5%" } }, [
-                                  _vm._v(_vm._s(subFormBreakdownChild.number))
-                                ]),
-                                _vm._v(" "),
-                                _c("td", [
-                                  _vm._v(_vm._s(subFormBreakdownChild.title))
-                                ]),
-                                _vm._v(" "),
-                                _c("td")
-                              ]
-                            )
-                          })
-                        ]
-                      : _c(
-                          "tr",
-                          {
-                            key: subFormBreakdown.id,
-                            class: {
-                              "table-active":
-                                _vm.subForm.active == subFormBreakdown.id
-                            },
-                            on: {
-                              click: function($event) {
-                                return _vm.toggleSubForm(subFormBreakdown.id)
-                              }
-                            }
-                          },
-                          [
-                            _c("td", [_vm._v(_vm._s(subFormBreakdown.number))]),
-                            _vm._v(" "),
-                            _c("td", { attrs: { colspan: "2" } }, [
-                              _vm._v(_vm._s(subFormBreakdown.title))
-                            ]),
-                            _vm._v(" "),
-                            _c("td")
-                          ]
-                        )
-                  ]
-                })
-              ],
-              2
-            )
+                          )
+                    ]
+                  })
+                ],
+                2
+              )
+            ])
+          ]),
+          _vm._v(" "),
+          _c("button", { staticClass: "btn btn-primary btn-block" }, [
+            _vm._v("Submit")
           ])
         ]),
         _vm._v(" "),
-        _c("button", { staticClass: "btn btn-primary btn-block" }, [
-          _vm._v("Submit")
-        ])
-      ]),
-      _vm._v(" "),
-      _c(
-        "div",
-        { staticClass: "col-6 border p-3" },
-        [
-          _vm.subForm.active == "1"
-            ? [
-                _c("div", { staticClass: "form-group" }, [
-                  _c("label", [_vm._v("Nomor Surat Permohonan")]),
-                  _vm._v(" "),
-                  _c("input", {
-                    directives: [
-                      {
-                        name: "model",
-                        rawName: "v-model",
-                        value: _vm.form.data["application_letter"]["number"],
-                        expression: "form.data['application_letter']['number']"
-                      }
-                    ],
-                    staticClass: "form-control",
-                    attrs: { type: "text" },
-                    domProps: {
-                      value: _vm.form.data["application_letter"]["number"]
-                    },
-                    on: {
-                      input: function($event) {
-                        if ($event.target.composing) {
-                          return
-                        }
-                        _vm.$set(
-                          _vm.form.data["application_letter"],
-                          "number",
-                          $event.target.value
-                        )
-                      }
-                    }
-                  })
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "form-group" }, [
-                  _c("label", [_vm._v("Tanggal Surat")]),
-                  _vm._v(" "),
-                  _c("input", {
-                    directives: [
-                      {
-                        name: "model",
-                        rawName: "v-model",
-                        value: _vm.form.data["application_letter"]["date"],
-                        expression: "form.data['application_letter']['date']"
-                      }
-                    ],
-                    staticClass: "form-control",
-                    attrs: { type: "text" },
-                    domProps: {
-                      value: _vm.form.data["application_letter"]["date"]
-                    },
-                    on: {
-                      input: function($event) {
-                        if ($event.target.composing) {
-                          return
-                        }
-                        _vm.$set(
-                          _vm.form.data["application_letter"],
-                          "date",
-                          $event.target.value
-                        )
-                      }
-                    }
-                  })
-                ]),
-                _vm._v(" "),
-                _c(
-                  "div",
-                  { staticClass: "form-group" },
-                  [
-                    _c("label", [_vm._v("Surat Permohonan")]),
+        _c(
+          "div",
+          { staticClass: "col-6 border p-3" },
+          [
+            _vm.subForm.active == "1"
+              ? [
+                  _c("div", { staticClass: "form-group" }, [
+                    _c("label", [_vm._v("Nomor Surat Permohonan")]),
                     _vm._v(" "),
-                    _c("file-picker-component", {
-                      model: {
-                        value: _vm.form.data["application_letter"]["file_id"],
-                        callback: function($$v) {
+                    _c("input", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.form.data["application_letter"]["number"],
+                          expression:
+                            "form.data['application_letter']['number']"
+                        }
+                      ],
+                      staticClass: "form-control",
+                      attrs: { type: "text" },
+                      domProps: {
+                        value: _vm.form.data["application_letter"]["number"]
+                      },
+                      on: {
+                        input: function($event) {
+                          if ($event.target.composing) {
+                            return
+                          }
                           _vm.$set(
                             _vm.form.data["application_letter"],
-                            "file_id",
-                            $$v
+                            "number",
+                            $event.target.value
                           )
-                        },
-                        expression: "form.data['application_letter']['file_id']"
+                        }
                       }
                     })
-                  ],
-                  1
-                )
-              ]
-            : _vm.subForm.active == "2"
-            ? [
-                _c("div", { staticClass: "form-group" }, [
-                  _c("label", [_vm._v("Afiliasi")]),
+                  ]),
                   _vm._v(" "),
-                  _c("input", {
-                    directives: [
-                      {
-                        name: "model",
-                        rawName: "v-model",
-                        value: _vm.form.data["proposal_letter"]["affiliation"],
-                        expression:
-                          "form.data['proposal_letter']['affiliation']"
-                      }
-                    ],
-                    staticClass: "form-control",
-                    attrs: { type: "text" },
-                    domProps: {
-                      value: _vm.form.data["proposal_letter"]["affiliation"]
-                    },
-                    on: {
-                      input: function($event) {
-                        if ($event.target.composing) {
-                          return
-                        }
-                        _vm.$set(
-                          _vm.form.data["proposal_letter"],
-                          "affiliation",
-                          $event.target.value
-                        )
-                      }
-                    }
-                  })
-                ]),
-                _vm._v(" "),
-                _c(
-                  "div",
-                  { staticClass: "form-group" },
-                  [
-                    _c("label", [_vm._v("Proposal")]),
+                  _c("div", { staticClass: "form-group" }, [
+                    _c("label", [_vm._v("Tanggal Surat")]),
                     _vm._v(" "),
-                    _c("file-picker-component", {
-                      model: {
-                        value: _vm.form.data["proposal_letter"]["file_id"],
-                        callback: function($$v) {
+                    _c("input", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.form.data["application_letter"]["date"],
+                          expression: "form.data['application_letter']['date']"
+                        }
+                      ],
+                      staticClass: "form-control",
+                      attrs: { type: "date" },
+                      domProps: {
+                        value: _vm.form.data["application_letter"]["date"]
+                      },
+                      on: {
+                        input: function($event) {
+                          if ($event.target.composing) {
+                            return
+                          }
+                          _vm.$set(
+                            _vm.form.data["application_letter"],
+                            "date",
+                            $event.target.value
+                          )
+                        }
+                      }
+                    })
+                  ]),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    { staticClass: "form-group" },
+                    [
+                      _c("label", [_vm._v("Surat Permohonan")]),
+                      _vm._v(" "),
+                      _c("file-picker-component", {
+                        model: {
+                          value: _vm.form.data["application_letter"]["file_id"],
+                          callback: function($$v) {
+                            _vm.$set(
+                              _vm.form.data["application_letter"],
+                              "file_id",
+                              $$v
+                            )
+                          },
+                          expression:
+                            "form.data['application_letter']['file_id']"
+                        }
+                      })
+                    ],
+                    1
+                  )
+                ]
+              : _vm.subForm.active == "2"
+              ? [
+                  _c("div", { staticClass: "form-group" }, [
+                    _c("label", [_vm._v("Afiliasi")]),
+                    _vm._v(" "),
+                    _c("input", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value:
+                            _vm.form.data["proposal_letter"]["affiliation"],
+                          expression:
+                            "form.data['proposal_letter']['affiliation']"
+                        }
+                      ],
+                      staticClass: "form-control",
+                      attrs: { type: "text" },
+                      domProps: {
+                        value: _vm.form.data["proposal_letter"]["affiliation"]
+                      },
+                      on: {
+                        input: function($event) {
+                          if ($event.target.composing) {
+                            return
+                          }
                           _vm.$set(
                             _vm.form.data["proposal_letter"],
-                            "file_id",
-                            $$v
+                            "affiliation",
+                            $event.target.value
                           )
-                        },
-                        expression: "form.data['proposal_letter']['file_id']"
+                        }
                       }
                     })
-                  ],
-                  1
-                )
-              ]
-            : _vm.subForm.active == "3a"
-            ? [
-                _c(
-                  "div",
-                  { staticClass: "form-group" },
-                  [
-                    _c("label", [
-                      _vm._v(
-                        "Surat Pengesahan / Penetapan SKPD Kab / Kota / Camat"
-                      )
-                    ]),
+                  ]),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    { staticClass: "form-group" },
+                    [
+                      _c("label", [_vm._v("Proposal")]),
+                      _vm._v(" "),
+                      _c("file-picker-component", {
+                        model: {
+                          value: _vm.form.data["proposal_letter"]["file_id"],
+                          callback: function($$v) {
+                            _vm.$set(
+                              _vm.form.data["proposal_letter"],
+                              "file_id",
+                              $$v
+                            )
+                          },
+                          expression: "form.data['proposal_letter']['file_id']"
+                        }
+                      })
+                    ],
+                    1
+                  )
+                ]
+              : _vm.subForm.active == "3a"
+              ? [
+                  _c(
+                    "div",
+                    { staticClass: "form-group" },
+                    [
+                      _c("label", [
+                        _vm._v(
+                          "Surat Pengesahan / Penetapan SKPD Kab / Kota / Camat"
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _c("file-picker-component", {
+                        model: {
+                          value: _vm.form.data["ratification"]["file_id"],
+                          callback: function($$v) {
+                            _vm.$set(
+                              _vm.form.data["ratification"],
+                              "file_id",
+                              $$v
+                            )
+                          },
+                          expression: "form.data['ratification']['file_id']"
+                        }
+                      })
+                    ],
+                    1
+                  )
+                ]
+              : _vm.subForm.active == "3b"
+              ? [
+                  _c("div", { staticClass: "form-group" }, [
+                    _c("label", [_vm._v("Alamat Lengkap")]),
                     _vm._v(" "),
-                    _c("file-picker-component", {
-                      model: {
-                        value: _vm.form.data["ratification"]["file_id"],
-                        callback: function($$v) {
+                    _c("input", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.form.data["domicile"]["address"],
+                          expression: "form.data['domicile']['address']"
+                        }
+                      ],
+                      staticClass: "form-control",
+                      attrs: { type: "text" },
+                      domProps: { value: _vm.form.data["domicile"]["address"] },
+                      on: {
+                        input: function($event) {
+                          if ($event.target.composing) {
+                            return
+                          }
                           _vm.$set(
-                            _vm.form.data["ratification"],
-                            "file_id",
-                            $$v
+                            _vm.form.data["domicile"],
+                            "address",
+                            $event.target.value
                           )
-                        },
-                        expression: "form.data['ratification']['file_id']"
-                      }
-                    })
-                  ],
-                  1
-                )
-              ]
-            : _vm.subForm.active == "3b"
-            ? [
-                _c("div", { staticClass: "form-group" }, [
-                  _c("label", [_vm._v("Alamat Lengkap")]),
-                  _vm._v(" "),
-                  _c("input", {
-                    directives: [
-                      {
-                        name: "model",
-                        rawName: "v-model",
-                        value: _vm.form.data["domicile"]["address"],
-                        expression: "form.data['domicile']['address']"
-                      }
-                    ],
-                    staticClass: "form-control",
-                    attrs: { type: "text" },
-                    domProps: { value: _vm.form.data["domicile"]["address"] },
-                    on: {
-                      input: function($event) {
-                        if ($event.target.composing) {
-                          return
                         }
-                        _vm.$set(
-                          _vm.form.data["domicile"],
-                          "address",
-                          $event.target.value
-                        )
-                      }
-                    }
-                  })
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "form-group" }, [
-                  _c("label", [_vm._v("Provinsi")]),
-                  _vm._v(" "),
-                  _c("select", {
-                    directives: [
-                      {
-                        name: "model",
-                        rawName: "v-model",
-                        value: _vm.form.data["domicile"]["province_id"],
-                        expression: "form.data['domicile']['province_id']"
-                      }
-                    ],
-                    staticClass: "form-control",
-                    on: {
-                      change: function($event) {
-                        var $$selectedVal = Array.prototype.filter
-                          .call($event.target.options, function(o) {
-                            return o.selected
-                          })
-                          .map(function(o) {
-                            var val = "_value" in o ? o._value : o.value
-                            return val
-                          })
-                        _vm.$set(
-                          _vm.form.data["domicile"],
-                          "province_id",
-                          $event.target.multiple
-                            ? $$selectedVal
-                            : $$selectedVal[0]
-                        )
-                      }
-                    }
-                  })
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "form-group" }, [
-                  _c("label", [_vm._v("Kab / Kota")]),
-                  _vm._v(" "),
-                  _c("select", {
-                    directives: [
-                      {
-                        name: "model",
-                        rawName: "v-model",
-                        value: _vm.form.data["domicile"]["city_id"],
-                        expression: "form.data['domicile']['city_id']"
-                      }
-                    ],
-                    staticClass: "form-control",
-                    on: {
-                      change: function($event) {
-                        var $$selectedVal = Array.prototype.filter
-                          .call($event.target.options, function(o) {
-                            return o.selected
-                          })
-                          .map(function(o) {
-                            var val = "_value" in o ? o._value : o.value
-                            return val
-                          })
-                        _vm.$set(
-                          _vm.form.data["domicile"],
-                          "city_id",
-                          $event.target.multiple
-                            ? $$selectedVal
-                            : $$selectedVal[0]
-                        )
-                      }
-                    }
-                  })
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "form-group" }, [
-                  _c("label", [_vm._v("Kecamatan")]),
-                  _vm._v(" "),
-                  _c("select", {
-                    directives: [
-                      {
-                        name: "model",
-                        rawName: "v-model",
-                        value: _vm.form.data["domicile"]["district_id"],
-                        expression: "form.data['domicile']['district_id']"
-                      }
-                    ],
-                    staticClass: "form-control",
-                    on: {
-                      change: function($event) {
-                        var $$selectedVal = Array.prototype.filter
-                          .call($event.target.options, function(o) {
-                            return o.selected
-                          })
-                          .map(function(o) {
-                            var val = "_value" in o ? o._value : o.value
-                            return val
-                          })
-                        _vm.$set(
-                          _vm.form.data["domicile"],
-                          "district_id",
-                          $event.target.multiple
-                            ? $$selectedVal
-                            : $$selectedVal[0]
-                        )
-                      }
-                    }
-                  })
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "form-group" }, [
-                  _c("label", [_vm._v("Kelurahan")]),
-                  _vm._v(" "),
-                  _c("select", {
-                    directives: [
-                      {
-                        name: "model",
-                        rawName: "v-model",
-                        value: _vm.form.data["domicile"]["subdistrict_id"],
-                        expression: "form.data['domicile']['subdistrict_id']"
-                      }
-                    ],
-                    staticClass: "form-control",
-                    on: {
-                      change: function($event) {
-                        var $$selectedVal = Array.prototype.filter
-                          .call($event.target.options, function(o) {
-                            return o.selected
-                          })
-                          .map(function(o) {
-                            var val = "_value" in o ? o._value : o.value
-                            return val
-                          })
-                        _vm.$set(
-                          _vm.form.data["domicile"],
-                          "subdistrict_id",
-                          $event.target.multiple
-                            ? $$selectedVal
-                            : $$selectedVal[0]
-                        )
-                      }
-                    }
-                  })
-                ]),
-                _vm._v(" "),
-                _c(
-                  "div",
-                  { staticClass: "form-group" },
-                  [
-                    _c("label", [_vm._v("Surat Keterangan Domisili (Desa)")]),
-                    _vm._v(" "),
-                    _c("file-picker-component", {
-                      model: {
-                        value: _vm.form.data["domicile"]["file_id"],
-                        callback: function($$v) {
-                          _vm.$set(_vm.form.data["domicile"], "file_id", $$v)
-                        },
-                        expression: "form.data['domicile']['file_id']"
                       }
                     })
-                  ],
-                  1
-                )
-              ]
-            : _vm.subForm.active == "3c"
-            ? [
-                _c("div", { staticClass: "form-group" }, [
-                  _c("label", [_vm._v("Nama Pokmas")]),
+                  ]),
                   _vm._v(" "),
-                  _c("input", {
-                    directives: [
-                      {
-                        name: "model",
-                        rawName: "v-model",
-                        value: _vm.form.data["pokmas"]["name"],
-                        expression: "form.data['pokmas']['name']"
-                      }
-                    ],
-                    staticClass: "form-control",
-                    attrs: { type: "text" },
-                    domProps: { value: _vm.form.data["pokmas"]["name"] },
-                    on: {
-                      input: function($event) {
-                        if ($event.target.composing) {
-                          return
+                  _c("div", { staticClass: "form-group" }, [
+                    _c("label", [_vm._v("Provinsi")]),
+                    _vm._v(" "),
+                    _c("select", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.form.data["domicile"]["province_id"],
+                          expression: "form.data['domicile']['province_id']"
                         }
-                        _vm.$set(
-                          _vm.form.data["pokmas"],
-                          "name",
-                          $event.target.value
-                        )
-                      }
-                    }
-                  })
-                ]),
-                _vm._v(" "),
-                _c(
-                  "div",
-                  { staticClass: "form-group" },
-                  [
-                    _c("label", [_vm._v("Mempunyai kepengurusan yang jelas")]),
-                    _vm._v(" "),
-                    _c("file-picker-component", {
-                      model: {
-                        value: _vm.form.data["pokmas"]["file_id"],
-                        callback: function($$v) {
-                          _vm.$set(_vm.form.data["pokmas"], "file_id", $$v)
-                        },
-                        expression: "form.data['pokmas']['file_id']"
-                      }
-                    })
-                  ],
-                  1
-                )
-              ]
-            : _vm.subForm.active == "3d"
-            ? [
-                _c(
-                  "div",
-                  { staticClass: "form-group" },
-                  [
-                    _c("label", [
-                      _vm._v("Berpendudukan di wilayah administrasi")
-                    ]),
-                    _vm._v(" "),
-                    _c("file-picker-component", {
-                      model: {
-                        value:
-                          _vm.form.data["administrative_residence"]["file_id"],
-                        callback: function($$v) {
+                      ],
+                      staticClass: "form-control",
+                      on: {
+                        change: function($event) {
+                          var $$selectedVal = Array.prototype.filter
+                            .call($event.target.options, function(o) {
+                              return o.selected
+                            })
+                            .map(function(o) {
+                              var val = "_value" in o ? o._value : o.value
+                              return val
+                            })
                           _vm.$set(
-                            _vm.form.data["administrative_residence"],
-                            "file_id",
-                            $$v
+                            _vm.form.data["domicile"],
+                            "province_id",
+                            $event.target.multiple
+                              ? $$selectedVal
+                              : $$selectedVal[0]
                           )
-                        },
-                        expression:
-                          "form.data['administrative_residence']['file_id']"
+                        }
                       }
                     })
-                  ],
-                  1
-                )
-              ]
-            : _vm.subForm.active == "4a"
-            ? [
-                _c(
-                  "div",
-                  { staticClass: "form-group" },
-                  [
-                    _c("label", [
-                      _vm._v(
-                        "Surat Pernyataan Tidak Menerima Bantuan dari APBD Provinsi Jawa Timur 1 (satu) Tahun Anggaran sebelumnya"
-                      )
-                    ]),
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "form-group" }, [
+                    _c("label", [_vm._v("Kab / Kota")]),
                     _vm._v(" "),
-                    _c("file-picker-component", {
-                      model: {
-                        value: _vm.form.data["aid"]["file_id"],
-                        callback: function($$v) {
-                          _vm.$set(_vm.form.data["aid"], "file_id", $$v)
-                        },
-                        expression: "form.data['aid']['file_id']"
-                      }
-                    })
-                  ],
-                  1
-                )
-              ]
-            : _vm.subForm.active == "4b"
-            ? [
-                _c(
-                  "div",
-                  { staticClass: "form-group" },
-                  [
-                    _c("label", [
-                      _vm._v(
-                        "Surat Pernyataan Tidak Menerima Bantuan Hibah dari APBD Provinsi Jawa Timur secara terus menerus, kecuali ditentukan peraturan perundang-undangan"
-                      )
-                    ]),
-                    _vm._v(" "),
-                    _c("file-picker-component", {
-                      model: {
-                        value: _vm.form.data["grant"]["file_id"],
-                        callback: function($$v) {
-                          _vm.$set(_vm.form.data["grant"], "file_id", $$v)
-                        },
-                        expression: "form.data['grant']['file_id']"
-                      }
-                    })
-                  ],
-                  1
-                )
-              ]
-            : _vm.subForm.active == "5"
-            ? [
-                _c(
-                  "div",
-                  { staticClass: "form-group" },
-                  [
-                    _c("label", [
-                      _vm._v(
-                        "Surat Pernyataan Kesiapan Lahan tidak bersengketa diketahui oleh Pejabat setempat (Kades/Lurah)"
-                      )
-                    ]),
-                    _vm._v(" "),
-                    _c("file-picker-component", {
-                      model: {
-                        value: _vm.form.data["land_readiness"]["file_id"],
-                        callback: function($$v) {
+                    _c("select", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.form.data["domicile"]["city_id"],
+                          expression: "form.data['domicile']['city_id']"
+                        }
+                      ],
+                      staticClass: "form-control",
+                      on: {
+                        change: function($event) {
+                          var $$selectedVal = Array.prototype.filter
+                            .call($event.target.options, function(o) {
+                              return o.selected
+                            })
+                            .map(function(o) {
+                              var val = "_value" in o ? o._value : o.value
+                              return val
+                            })
                           _vm.$set(
-                            _vm.form.data["land_readiness"],
-                            "file_id",
-                            $$v
+                            _vm.form.data["domicile"],
+                            "city_id",
+                            $event.target.multiple
+                              ? $$selectedVal
+                              : $$selectedVal[0]
                           )
-                        },
-                        expression: "form.data['land_readiness']['file_id']"
+                        }
                       }
                     })
-                  ],
-                  1
-                )
-              ]
-            : _vm.subForm.active == "6a"
-            ? [
-                _c(
-                  "div",
-                  { staticClass: "form-group" },
-                  [
-                    _c("label", [_vm._v("KTP Ketua")]),
-                    _vm._v(" "),
-                    _c("file-picker-component", {
-                      model: {
-                        value: _vm.form.data["chairman"]["file_id"],
-                        callback: function($$v) {
-                          _vm.$set(_vm.form.data["chairman"], "file_id", $$v)
-                        },
-                        expression: "form.data['chairman']['file_id']"
-                      }
-                    })
-                  ],
-                  1
-                ),
-                _vm._v(" "),
-                _c("div", { staticClass: "form-group" }, [
-                  _c("label", [_vm._v("Nama")]),
+                  ]),
                   _vm._v(" "),
-                  _c("input", {
-                    directives: [
-                      {
-                        name: "model",
-                        rawName: "v-model",
-                        value: _vm.form.data["chairman"]["name"],
-                        expression: "form.data['chairman']['name']"
-                      }
-                    ],
-                    staticClass: "form-control",
-                    attrs: { type: "text" },
-                    domProps: { value: _vm.form.data["chairman"]["name"] },
-                    on: {
-                      input: function($event) {
-                        if ($event.target.composing) {
-                          return
-                        }
-                        _vm.$set(
-                          _vm.form.data["chairman"],
-                          "name",
-                          $event.target.value
-                        )
-                      }
-                    }
-                  })
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "form-group" }, [
-                  _c("label", [_vm._v("No. Telp")]),
-                  _vm._v(" "),
-                  _c("input", {
-                    directives: [
-                      {
-                        name: "model",
-                        rawName: "v-model",
-                        value: _vm.form.data["chairman"]["phone"],
-                        expression: "form.data['chairman']['phone']"
-                      }
-                    ],
-                    staticClass: "form-control",
-                    attrs: { type: "text" },
-                    domProps: { value: _vm.form.data["chairman"]["phone"] },
-                    on: {
-                      input: function($event) {
-                        if ($event.target.composing) {
-                          return
-                        }
-                        _vm.$set(
-                          _vm.form.data["chairman"],
-                          "phone",
-                          $event.target.value
-                        )
-                      }
-                    }
-                  })
-                ])
-              ]
-            : _vm.subForm.active == "6b"
-            ? [
-                _c(
-                  "div",
-                  { staticClass: "form-group" },
-                  [
-                    _c("label", [_vm._v("KTP Sekretaris")]),
+                  _c("div", { staticClass: "form-group" }, [
+                    _c("label", [_vm._v("Kecamatan")]),
                     _vm._v(" "),
-                    _c("file-picker-component", {
-                      model: {
-                        value: _vm.form.data["secretary"]["file_id"],
-                        callback: function($$v) {
-                          _vm.$set(_vm.form.data["secretary"], "file_id", $$v)
-                        },
-                        expression: "form.data['secretary']['file_id']"
-                      }
-                    })
-                  ],
-                  1
-                ),
-                _vm._v(" "),
-                _c("div", { staticClass: "form-group" }, [
-                  _c("label", [_vm._v("Nama")]),
-                  _vm._v(" "),
-                  _c("input", {
-                    directives: [
-                      {
-                        name: "model",
-                        rawName: "v-model",
-                        value: _vm.form.data["secretary"]["name"],
-                        expression: "form.data['secretary']['name']"
-                      }
-                    ],
-                    staticClass: "form-control",
-                    attrs: { type: "text" },
-                    domProps: { value: _vm.form.data["secretary"]["name"] },
-                    on: {
-                      input: function($event) {
-                        if ($event.target.composing) {
-                          return
+                    _c("select", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.form.data["domicile"]["district_id"],
+                          expression: "form.data['domicile']['district_id']"
                         }
-                        _vm.$set(
-                          _vm.form.data["secretary"],
-                          "name",
-                          $event.target.value
-                        )
-                      }
-                    }
-                  })
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "form-group" }, [
-                  _c("label", [_vm._v("No. Telp")]),
-                  _vm._v(" "),
-                  _c("input", {
-                    directives: [
-                      {
-                        name: "model",
-                        rawName: "v-model",
-                        value: _vm.form.data["secretary"]["phone"],
-                        expression: "form.data['secretary']['phone']"
-                      }
-                    ],
-                    staticClass: "form-control",
-                    attrs: { type: "text" },
-                    domProps: { value: _vm.form.data["secretary"]["phone"] },
-                    on: {
-                      input: function($event) {
-                        if ($event.target.composing) {
-                          return
-                        }
-                        _vm.$set(
-                          _vm.form.data["secretary"],
-                          "phone",
-                          $event.target.value
-                        )
-                      }
-                    }
-                  })
-                ])
-              ]
-            : _vm.subForm.active == "6c"
-            ? [
-                _c(
-                  "div",
-                  { staticClass: "form-group" },
-                  [
-                    _c("label", [_vm._v("KTP Bendahara")]),
-                    _vm._v(" "),
-                    _c("file-picker-component", {
-                      model: {
-                        value: _vm.form.data["treasurer"]["file_id"],
-                        callback: function($$v) {
-                          _vm.$set(_vm.form.data["treasurer"], "file_id", $$v)
-                        },
-                        expression: "form.data['treasurer']['file_id']"
-                      }
-                    })
-                  ],
-                  1
-                ),
-                _vm._v(" "),
-                _c("div", { staticClass: "form-group" }, [
-                  _c("label", [_vm._v("Nama")]),
-                  _vm._v(" "),
-                  _c("input", {
-                    directives: [
-                      {
-                        name: "model",
-                        rawName: "v-model",
-                        value: _vm.form.data["treasurer"]["name"],
-                        expression: "form.data['treasurer']['name']"
-                      }
-                    ],
-                    staticClass: "form-control",
-                    attrs: { type: "text" },
-                    domProps: { value: _vm.form.data["treasurer"]["name"] },
-                    on: {
-                      input: function($event) {
-                        if ($event.target.composing) {
-                          return
-                        }
-                        _vm.$set(
-                          _vm.form.data["treasurer"],
-                          "name",
-                          $event.target.value
-                        )
-                      }
-                    }
-                  })
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "form-group" }, [
-                  _c("label", [_vm._v("No. Telp")]),
-                  _vm._v(" "),
-                  _c("input", {
-                    directives: [
-                      {
-                        name: "model",
-                        rawName: "v-model",
-                        value: _vm.form.data["treasurer"]["phone"],
-                        expression: "form.data['treasurer']['phone']"
-                      }
-                    ],
-                    staticClass: "form-control",
-                    attrs: { type: "text" },
-                    domProps: { value: _vm.form.data["treasurer"]["phone"] },
-                    on: {
-                      input: function($event) {
-                        if ($event.target.composing) {
-                          return
-                        }
-                        _vm.$set(
-                          _vm.form.data["treasurer"],
-                          "phone",
-                          $event.target.value
-                        )
-                      }
-                    }
-                  })
-                ])
-              ]
-            : _vm.subForm.active == "6d"
-            ? [
-                _c(
-                  "div",
-                  { staticClass: "form-group" },
-                  [
-                    _c("label", [_vm._v("KTP Anggota")]),
-                    _vm._v(" "),
-                    _c("file-picker-component", {
-                      model: {
-                        value: _vm.form.data["member"]["file_id"],
-                        callback: function($$v) {
-                          _vm.$set(_vm.form.data["member"], "file_id", $$v)
-                        },
-                        expression: "form.data['member']['file_id']"
-                      }
-                    })
-                  ],
-                  1
-                )
-              ]
-            : _vm.subForm.active == "7"
-            ? [
-                _c(
-                  "div",
-                  { staticClass: "form-group" },
-                  [
-                    _c("label", [_vm._v("Denah Lokasi Pekerjaan")]),
-                    _vm._v(" "),
-                    _c("file-picker-component", {
-                      model: {
-                        value: _vm.form.data["site_plan"]["file_id"],
-                        callback: function($$v) {
-                          _vm.$set(_vm.form.data["site_plan"], "file_id", $$v)
-                        },
-                        expression: "form.data['site_plan']['file_id']"
-                      }
-                    })
-                  ],
-                  1
-                )
-              ]
-            : _vm.subForm.active == "8"
-            ? [
-                _c(
-                  "div",
-                  { staticClass: "form-group" },
-                  [
-                    _c("label", [_vm._v("Foto Lokasi Kegiatan (Foto 0%)")]),
-                    _vm._v(" "),
-                    _c("file-picker-component", {
-                      model: {
-                        value: _vm.form.data["activity_photo"]["file_id"],
-                        callback: function($$v) {
+                      ],
+                      staticClass: "form-control",
+                      on: {
+                        change: function($event) {
+                          var $$selectedVal = Array.prototype.filter
+                            .call($event.target.options, function(o) {
+                              return o.selected
+                            })
+                            .map(function(o) {
+                              var val = "_value" in o ? o._value : o.value
+                              return val
+                            })
                           _vm.$set(
-                            _vm.form.data["activity_photo"],
-                            "file_id",
-                            $$v
+                            _vm.form.data["domicile"],
+                            "district_id",
+                            $event.target.multiple
+                              ? $$selectedVal
+                              : $$selectedVal[0]
                           )
-                        },
-                        expression: "form.data['activity_photo']['file_id']"
+                        }
                       }
                     })
-                  ],
-                  1
-                )
-              ]
-            : _vm.subForm.active == "9a"
-            ? [
-                _c("div", { staticClass: "form-group" }, [
-                  _c("label", [_vm._v("Nilai RAB")]),
+                  ]),
                   _vm._v(" "),
-                  _c("input", {
-                    directives: [
-                      {
-                        name: "model",
-                        rawName: "v-model",
-                        value: _vm.form.data["budget_plan"]["value"],
-                        expression: "form.data['budget_plan']['value']"
-                      }
-                    ],
-                    staticClass: "form-control",
-                    attrs: { type: "number" },
-                    domProps: { value: _vm.form.data["budget_plan"]["value"] },
-                    on: {
-                      input: function($event) {
-                        if ($event.target.composing) {
-                          return
-                        }
-                        _vm.$set(
-                          _vm.form.data["budget_plan"],
-                          "value",
-                          $event.target.value
-                        )
-                      }
-                    }
-                  })
-                ]),
-                _vm._v(" "),
-                _c(
-                  "div",
-                  { staticClass: "form-group" },
-                  [
-                    _c("label", [_vm._v("Upload RAB")]),
+                  _c("div", { staticClass: "form-group" }, [
+                    _c("label", [_vm._v("Kelurahan")]),
                     _vm._v(" "),
-                    _c("file-picker-component", {
-                      model: {
-                        value: _vm.form.data["budget_plan"]["file_id"],
-                        callback: function($$v) {
-                          _vm.$set(_vm.form.data["budget_plan"], "file_id", $$v)
-                        },
-                        expression: "form.data['budget_plan']['file_id']"
+                    _c("select", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.form.data["domicile"]["subdistrict_id"],
+                          expression: "form.data['domicile']['subdistrict_id']"
+                        }
+                      ],
+                      staticClass: "form-control",
+                      on: {
+                        change: function($event) {
+                          var $$selectedVal = Array.prototype.filter
+                            .call($event.target.options, function(o) {
+                              return o.selected
+                            })
+                            .map(function(o) {
+                              var val = "_value" in o ? o._value : o.value
+                              return val
+                            })
+                          _vm.$set(
+                            _vm.form.data["domicile"],
+                            "subdistrict_id",
+                            $event.target.multiple
+                              ? $$selectedVal
+                              : $$selectedVal[0]
+                          )
+                        }
                       }
                     })
-                  ],
-                  1
-                )
-              ]
-            : _vm.subForm.active == "10"
-            ? [
-                _c("div", { staticClass: "form-group" }, [
-                  _c("label", [_vm._v("Bank")]),
+                  ]),
                   _vm._v(" "),
-                  _c("select", {
-                    directives: [
-                      {
-                        name: "model",
-                        rawName: "v-model",
-                        value: _vm.form.data["bank_account"]["bank_id"],
-                        expression: "form.data['bank_account']['bank_id']"
-                      }
-                    ],
-                    staticClass: "form-control",
-                    on: {
-                      change: function($event) {
-                        var $$selectedVal = Array.prototype.filter
-                          .call($event.target.options, function(o) {
-                            return o.selected
-                          })
-                          .map(function(o) {
-                            var val = "_value" in o ? o._value : o.value
-                            return val
-                          })
-                        _vm.$set(
-                          _vm.form.data["bank_account"],
-                          "bank_id",
-                          $event.target.multiple
-                            ? $$selectedVal
-                            : $$selectedVal[0]
-                        )
-                      }
-                    }
-                  })
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "form-group" }, [
-                  _c("label", [_vm._v("Nomor Rekening")]),
-                  _vm._v(" "),
-                  _c("input", {
-                    directives: [
-                      {
-                        name: "model",
-                        rawName: "v-model",
-                        value: _vm.form.data["bank_account"]["number"],
-                        expression: "form.data['bank_account']['number']"
-                      }
-                    ],
-                    staticClass: "form-control",
-                    attrs: { type: "text" },
-                    domProps: {
-                      value: _vm.form.data["bank_account"]["number"]
-                    },
-                    on: {
-                      input: function($event) {
-                        if ($event.target.composing) {
-                          return
+                  _c(
+                    "div",
+                    { staticClass: "form-group" },
+                    [
+                      _c("label", [_vm._v("Surat Keterangan Domisili (Desa)")]),
+                      _vm._v(" "),
+                      _c("file-picker-component", {
+                        model: {
+                          value: _vm.form.data["domicile"]["file_id"],
+                          callback: function($$v) {
+                            _vm.$set(_vm.form.data["domicile"], "file_id", $$v)
+                          },
+                          expression: "form.data['domicile']['file_id']"
                         }
-                        _vm.$set(
-                          _vm.form.data["bank_account"],
-                          "number",
-                          $event.target.value
-                        )
-                      }
-                    }
-                  })
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "form-group" }, [
-                  _c("label", [_vm._v("Atas Nama")]),
-                  _vm._v(" "),
-                  _c("input", {
-                    directives: [
-                      {
-                        name: "model",
-                        rawName: "v-model",
-                        value: _vm.form.data["bank_account"]["owner"],
-                        expression: "form.data['bank_account']['owner']"
-                      }
+                      })
                     ],
-                    staticClass: "form-control",
-                    attrs: { type: "text" },
-                    domProps: { value: _vm.form.data["bank_account"]["owner"] },
-                    on: {
-                      input: function($event) {
-                        if ($event.target.composing) {
-                          return
+                    1
+                  )
+                ]
+              : _vm.subForm.active == "3c"
+              ? [
+                  _c("div", { staticClass: "form-group" }, [
+                    _c("label", [_vm._v("Nama Pokmas")]),
+                    _vm._v(" "),
+                    _c("input", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.form.data["pokmas"]["name"],
+                          expression: "form.data['pokmas']['name']"
                         }
-                        _vm.$set(
-                          _vm.form.data["bank_account"],
-                          "owner",
-                          $event.target.value
-                        )
+                      ],
+                      staticClass: "form-control",
+                      attrs: { type: "text" },
+                      domProps: { value: _vm.form.data["pokmas"]["name"] },
+                      on: {
+                        input: function($event) {
+                          if ($event.target.composing) {
+                            return
+                          }
+                          _vm.$set(
+                            _vm.form.data["pokmas"],
+                            "name",
+                            $event.target.value
+                          )
+                        }
                       }
-                    }
-                  })
-                ])
-              ]
-            : _vm._e()
-        ],
-        2
-      )
-    ])
-  ])
+                    })
+                  ]),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    { staticClass: "form-group" },
+                    [
+                      _c("label", [
+                        _vm._v("Mempunyai kepengurusan yang jelas")
+                      ]),
+                      _vm._v(" "),
+                      _c("file-picker-component", {
+                        model: {
+                          value: _vm.form.data["pokmas"]["file_id"],
+                          callback: function($$v) {
+                            _vm.$set(_vm.form.data["pokmas"], "file_id", $$v)
+                          },
+                          expression: "form.data['pokmas']['file_id']"
+                        }
+                      })
+                    ],
+                    1
+                  )
+                ]
+              : _vm.subForm.active == "3d"
+              ? [
+                  _c(
+                    "div",
+                    { staticClass: "form-group" },
+                    [
+                      _c("label", [
+                        _vm._v("Berpendudukan di wilayah administrasi")
+                      ]),
+                      _vm._v(" "),
+                      _c("file-picker-component", {
+                        model: {
+                          value:
+                            _vm.form.data["administrative_residence"][
+                              "file_id"
+                            ],
+                          callback: function($$v) {
+                            _vm.$set(
+                              _vm.form.data["administrative_residence"],
+                              "file_id",
+                              $$v
+                            )
+                          },
+                          expression:
+                            "form.data['administrative_residence']['file_id']"
+                        }
+                      })
+                    ],
+                    1
+                  )
+                ]
+              : _vm.subForm.active == "4a"
+              ? [
+                  _c(
+                    "div",
+                    { staticClass: "form-group" },
+                    [
+                      _c("label", [
+                        _vm._v(
+                          "Surat Pernyataan Tidak Menerima Bantuan dari APBD Provinsi Jawa Timur 1 (satu) Tahun Anggaran sebelumnya"
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _c("file-picker-component", {
+                        model: {
+                          value: _vm.form.data["aid"]["file_id"],
+                          callback: function($$v) {
+                            _vm.$set(_vm.form.data["aid"], "file_id", $$v)
+                          },
+                          expression: "form.data['aid']['file_id']"
+                        }
+                      })
+                    ],
+                    1
+                  )
+                ]
+              : _vm.subForm.active == "4b"
+              ? [
+                  _c(
+                    "div",
+                    { staticClass: "form-group" },
+                    [
+                      _c("label", [
+                        _vm._v(
+                          "Surat Pernyataan Tidak Menerima Bantuan Hibah dari APBD Provinsi Jawa Timur secara terus menerus, kecuali ditentukan peraturan perundang-undangan"
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _c("file-picker-component", {
+                        model: {
+                          value: _vm.form.data["grant"]["file_id"],
+                          callback: function($$v) {
+                            _vm.$set(_vm.form.data["grant"], "file_id", $$v)
+                          },
+                          expression: "form.data['grant']['file_id']"
+                        }
+                      })
+                    ],
+                    1
+                  )
+                ]
+              : _vm.subForm.active == "5"
+              ? [
+                  _c(
+                    "div",
+                    { staticClass: "form-group" },
+                    [
+                      _c("label", [
+                        _vm._v(
+                          "Surat Pernyataan Kesiapan Lahan tidak bersengketa diketahui oleh Pejabat setempat (Kades/Lurah)"
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _c("file-picker-component", {
+                        model: {
+                          value: _vm.form.data["land_readiness"]["file_id"],
+                          callback: function($$v) {
+                            _vm.$set(
+                              _vm.form.data["land_readiness"],
+                              "file_id",
+                              $$v
+                            )
+                          },
+                          expression: "form.data['land_readiness']['file_id']"
+                        }
+                      })
+                    ],
+                    1
+                  )
+                ]
+              : _vm.subForm.active == "6a"
+              ? [
+                  _c(
+                    "div",
+                    { staticClass: "form-group" },
+                    [
+                      _c("label", [_vm._v("KTP Ketua")]),
+                      _vm._v(" "),
+                      _c("file-picker-component", {
+                        model: {
+                          value: _vm.form.data["chairman"]["file_id"],
+                          callback: function($$v) {
+                            _vm.$set(_vm.form.data["chairman"], "file_id", $$v)
+                          },
+                          expression: "form.data['chairman']['file_id']"
+                        }
+                      })
+                    ],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "form-group" }, [
+                    _c("label", [_vm._v("Nama")]),
+                    _vm._v(" "),
+                    _c("input", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.form.data["chairman"]["name"],
+                          expression: "form.data['chairman']['name']"
+                        }
+                      ],
+                      staticClass: "form-control",
+                      attrs: { type: "text" },
+                      domProps: { value: _vm.form.data["chairman"]["name"] },
+                      on: {
+                        input: function($event) {
+                          if ($event.target.composing) {
+                            return
+                          }
+                          _vm.$set(
+                            _vm.form.data["chairman"],
+                            "name",
+                            $event.target.value
+                          )
+                        }
+                      }
+                    })
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "form-group" }, [
+                    _c("label", [_vm._v("No. Telp")]),
+                    _vm._v(" "),
+                    _c("input", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.form.data["chairman"]["phone"],
+                          expression: "form.data['chairman']['phone']"
+                        }
+                      ],
+                      staticClass: "form-control",
+                      attrs: { type: "text" },
+                      domProps: { value: _vm.form.data["chairman"]["phone"] },
+                      on: {
+                        input: function($event) {
+                          if ($event.target.composing) {
+                            return
+                          }
+                          _vm.$set(
+                            _vm.form.data["chairman"],
+                            "phone",
+                            $event.target.value
+                          )
+                        }
+                      }
+                    })
+                  ])
+                ]
+              : _vm.subForm.active == "6b"
+              ? [
+                  _c(
+                    "div",
+                    { staticClass: "form-group" },
+                    [
+                      _c("label", [_vm._v("KTP Sekretaris")]),
+                      _vm._v(" "),
+                      _c("file-picker-component", {
+                        model: {
+                          value: _vm.form.data["secretary"]["file_id"],
+                          callback: function($$v) {
+                            _vm.$set(_vm.form.data["secretary"], "file_id", $$v)
+                          },
+                          expression: "form.data['secretary']['file_id']"
+                        }
+                      })
+                    ],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "form-group" }, [
+                    _c("label", [_vm._v("Nama")]),
+                    _vm._v(" "),
+                    _c("input", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.form.data["secretary"]["name"],
+                          expression: "form.data['secretary']['name']"
+                        }
+                      ],
+                      staticClass: "form-control",
+                      attrs: { type: "text" },
+                      domProps: { value: _vm.form.data["secretary"]["name"] },
+                      on: {
+                        input: function($event) {
+                          if ($event.target.composing) {
+                            return
+                          }
+                          _vm.$set(
+                            _vm.form.data["secretary"],
+                            "name",
+                            $event.target.value
+                          )
+                        }
+                      }
+                    })
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "form-group" }, [
+                    _c("label", [_vm._v("No. Telp")]),
+                    _vm._v(" "),
+                    _c("input", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.form.data["secretary"]["phone"],
+                          expression: "form.data['secretary']['phone']"
+                        }
+                      ],
+                      staticClass: "form-control",
+                      attrs: { type: "text" },
+                      domProps: { value: _vm.form.data["secretary"]["phone"] },
+                      on: {
+                        input: function($event) {
+                          if ($event.target.composing) {
+                            return
+                          }
+                          _vm.$set(
+                            _vm.form.data["secretary"],
+                            "phone",
+                            $event.target.value
+                          )
+                        }
+                      }
+                    })
+                  ])
+                ]
+              : _vm.subForm.active == "6c"
+              ? [
+                  _c(
+                    "div",
+                    { staticClass: "form-group" },
+                    [
+                      _c("label", [_vm._v("KTP Bendahara")]),
+                      _vm._v(" "),
+                      _c("file-picker-component", {
+                        model: {
+                          value: _vm.form.data["treasurer"]["file_id"],
+                          callback: function($$v) {
+                            _vm.$set(_vm.form.data["treasurer"], "file_id", $$v)
+                          },
+                          expression: "form.data['treasurer']['file_id']"
+                        }
+                      })
+                    ],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "form-group" }, [
+                    _c("label", [_vm._v("Nama")]),
+                    _vm._v(" "),
+                    _c("input", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.form.data["treasurer"]["name"],
+                          expression: "form.data['treasurer']['name']"
+                        }
+                      ],
+                      staticClass: "form-control",
+                      attrs: { type: "text" },
+                      domProps: { value: _vm.form.data["treasurer"]["name"] },
+                      on: {
+                        input: function($event) {
+                          if ($event.target.composing) {
+                            return
+                          }
+                          _vm.$set(
+                            _vm.form.data["treasurer"],
+                            "name",
+                            $event.target.value
+                          )
+                        }
+                      }
+                    })
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "form-group" }, [
+                    _c("label", [_vm._v("No. Telp")]),
+                    _vm._v(" "),
+                    _c("input", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.form.data["treasurer"]["phone"],
+                          expression: "form.data['treasurer']['phone']"
+                        }
+                      ],
+                      staticClass: "form-control",
+                      attrs: { type: "text" },
+                      domProps: { value: _vm.form.data["treasurer"]["phone"] },
+                      on: {
+                        input: function($event) {
+                          if ($event.target.composing) {
+                            return
+                          }
+                          _vm.$set(
+                            _vm.form.data["treasurer"],
+                            "phone",
+                            $event.target.value
+                          )
+                        }
+                      }
+                    })
+                  ])
+                ]
+              : _vm.subForm.active == "6d"
+              ? [
+                  _c(
+                    "div",
+                    { staticClass: "form-group" },
+                    [
+                      _c("label", [_vm._v("KTP Anggota")]),
+                      _vm._v(" "),
+                      _c("file-picker-component", {
+                        model: {
+                          value: _vm.form.data["member"]["file_id"],
+                          callback: function($$v) {
+                            _vm.$set(_vm.form.data["member"], "file_id", $$v)
+                          },
+                          expression: "form.data['member']['file_id']"
+                        }
+                      })
+                    ],
+                    1
+                  )
+                ]
+              : _vm.subForm.active == "7"
+              ? [
+                  _c(
+                    "div",
+                    { staticClass: "form-group" },
+                    [
+                      _c("label", [_vm._v("Denah Lokasi Pekerjaan")]),
+                      _vm._v(" "),
+                      _c("file-picker-component", {
+                        model: {
+                          value: _vm.form.data["location"]["file_id"],
+                          callback: function($$v) {
+                            _vm.$set(_vm.form.data["location"], "file_id", $$v)
+                          },
+                          expression: "form.data['location']['file_id']"
+                        }
+                      })
+                    ],
+                    1
+                  )
+                ]
+              : _vm.subForm.active == "8"
+              ? [
+                  _c(
+                    "div",
+                    { staticClass: "form-group" },
+                    [
+                      _c("label", [_vm._v("Foto Lokasi Kegiatan (Foto 0%)")]),
+                      _vm._v(" "),
+                      _c("file-picker-component", {
+                        model: {
+                          value: _vm.form.data["activity"]["file_id"],
+                          callback: function($$v) {
+                            _vm.$set(_vm.form.data["activity"], "file_id", $$v)
+                          },
+                          expression: "form.data['activity']['file_id']"
+                        }
+                      })
+                    ],
+                    1
+                  )
+                ]
+              : _vm.subForm.active == "9a"
+              ? [
+                  _c("div", { staticClass: "form-group" }, [
+                    _c("label", [_vm._v("Nilai RAB")]),
+                    _vm._v(" "),
+                    _c("input", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.form.data["budget_plan"]["value"],
+                          expression: "form.data['budget_plan']['value']"
+                        }
+                      ],
+                      staticClass: "form-control",
+                      attrs: { type: "number" },
+                      domProps: {
+                        value: _vm.form.data["budget_plan"]["value"]
+                      },
+                      on: {
+                        input: function($event) {
+                          if ($event.target.composing) {
+                            return
+                          }
+                          _vm.$set(
+                            _vm.form.data["budget_plan"],
+                            "value",
+                            $event.target.value
+                          )
+                        }
+                      }
+                    })
+                  ]),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    { staticClass: "form-group" },
+                    [
+                      _c("label", [_vm._v("Upload RAB")]),
+                      _vm._v(" "),
+                      _c("file-picker-component", {
+                        model: {
+                          value: _vm.form.data["budget_plan"]["file_id"],
+                          callback: function($$v) {
+                            _vm.$set(
+                              _vm.form.data["budget_plan"],
+                              "file_id",
+                              $$v
+                            )
+                          },
+                          expression: "form.data['budget_plan']['file_id']"
+                        }
+                      })
+                    ],
+                    1
+                  )
+                ]
+              : _vm.subForm.active == "10"
+              ? [
+                  _c("div", { staticClass: "form-group" }, [
+                    _c("label", [_vm._v("Bank")]),
+                    _vm._v(" "),
+                    _c("select", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.form.data["bank_account"]["bank_id"],
+                          expression: "form.data['bank_account']['bank_id']"
+                        }
+                      ],
+                      staticClass: "form-control",
+                      on: {
+                        change: function($event) {
+                          var $$selectedVal = Array.prototype.filter
+                            .call($event.target.options, function(o) {
+                              return o.selected
+                            })
+                            .map(function(o) {
+                              var val = "_value" in o ? o._value : o.value
+                              return val
+                            })
+                          _vm.$set(
+                            _vm.form.data["bank_account"],
+                            "bank_id",
+                            $event.target.multiple
+                              ? $$selectedVal
+                              : $$selectedVal[0]
+                          )
+                        }
+                      }
+                    })
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "form-group" }, [
+                    _c("label", [_vm._v("Nomor Rekening")]),
+                    _vm._v(" "),
+                    _c("input", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.form.data["bank_account"]["number"],
+                          expression: "form.data['bank_account']['number']"
+                        }
+                      ],
+                      staticClass: "form-control",
+                      attrs: { type: "text" },
+                      domProps: {
+                        value: _vm.form.data["bank_account"]["number"]
+                      },
+                      on: {
+                        input: function($event) {
+                          if ($event.target.composing) {
+                            return
+                          }
+                          _vm.$set(
+                            _vm.form.data["bank_account"],
+                            "number",
+                            $event.target.value
+                          )
+                        }
+                      }
+                    })
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "form-group" }, [
+                    _c("label", [_vm._v("Atas Nama")]),
+                    _vm._v(" "),
+                    _c("input", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.form.data["bank_account"]["name"],
+                          expression: "form.data['bank_account']['name']"
+                        }
+                      ],
+                      staticClass: "form-control",
+                      attrs: { type: "text" },
+                      domProps: {
+                        value: _vm.form.data["bank_account"]["name"]
+                      },
+                      on: {
+                        input: function($event) {
+                          if ($event.target.composing) {
+                            return
+                          }
+                          _vm.$set(
+                            _vm.form.data["bank_account"],
+                            "name",
+                            $event.target.value
+                          )
+                        }
+                      }
+                    })
+                  ])
+                ]
+              : _vm._e()
+          ],
+          2
+        )
+      ])
+    ]
+  )
 }
 var staticRenderFns = [
   function() {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "form-group" }, [
-      _c("label", [_vm._v("Jenis Kegiatan")]),
-      _vm._v(" "),
-      _c("input", { staticClass: "form-control", attrs: { type: "text" } })
-    ])
+    return _c(
+      "button",
+      {
+        staticClass: "close",
+        attrs: {
+          type: "button",
+          "data-dismiss": "alert",
+          "aria-label": "Close"
+        }
+      },
+      [_c("span", { attrs: { "aria-hidden": "true" } }, [_vm._v("×")])]
+    )
   },
   function() {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "form-group" }, [
-      _c("label", [_vm._v("Catatan")]),
-      _vm._v(" "),
-      _c("input", { staticClass: "form-control", attrs: { type: "text" } })
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "form-group" }, [
-      _c("label", [_vm._v("Disposisi")]),
-      _vm._v(" "),
-      _c("input", { staticClass: "form-control", attrs: { type: "text" } })
-    ])
+    return _c(
+      "button",
+      {
+        staticClass: "close",
+        attrs: {
+          type: "button",
+          "data-dismiss": "alert",
+          "aria-label": "Close"
+        }
+      },
+      [_c("span", { attrs: { "aria-hidden": "true" } }, [_vm._v("×")])]
+    )
   }
 ]
 render._withStripped = true
