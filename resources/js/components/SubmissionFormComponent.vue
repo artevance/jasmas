@@ -1,18 +1,34 @@
 <template>
-    <form class="my-4">
+    <form class="my-4" @submit.prevent="submit">
+        <div class="row">
+            <div class="col">
+                <div class="alert alert-success alert-dismissible fade show" v-if="form.state.success == true">
+                    Data berhasil disubmit
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="alert alert-danger alert-dismissible fade show" v-if="form.state.success == false">
+                    Data gagal disubmit
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+            </div>
+        </div>
         <div class="row">
             <div class="col-6 border p-3">
                 <div class="form-group">
                     <label>Jenis Kegiatan</label>
-                    <input type="text" class="form-control">
+                    <input type="text" class="form-control" v-model="form.data['activity_type']">
                 </div>
                 <div class="form-group">
                     <label>Catatan</label>
-                    <input type="text" class="form-control">
+                    <input type="text" class="form-control" v-model="form.data['note']">
                 </div>
                 <div class="form-group">
                     <label>Disposisi</label>
-                    <input type="text" class="form-control">
+                    <input type="text" class="form-control" v-model="form.data['disposition']">
                 </div>
                 <div class="table-responsive">
                     <table class="table table-hover table-bordered">
@@ -70,7 +86,7 @@
                     </div>
                     <div class="form-group">
                         <label>Tanggal Surat</label>
-                        <input type="text" class="form-control" v-model="form.data['application_letter']['date']">
+                        <input type="date" class="form-control" v-model="form.data['application_letter']['date']">
                     </div>
                     <div class="form-group">
                         <label>Surat Permohonan</label>
@@ -217,14 +233,14 @@
                 <template v-else-if="subForm.active == '7'">
                     <div class="form-group">
                         <label>Denah Lokasi Pekerjaan</label>
-                        <file-picker-component v-model="form.data['site_plan']['file_id']" />
+                        <file-picker-component v-model="form.data['location']['file_id']" />
                     </div>
                 </template>
                 <!-- Activity Photo Form -->
                 <template v-else-if="subForm.active == '8'">
                     <div class="form-group">
                         <label>Foto Lokasi Kegiatan (Foto 0%)</label>
-                        <file-picker-component v-model="form.data['activity_photo']['file_id']" />
+                        <file-picker-component v-model="form.data['activity']['file_id']" />
                     </div>
                 </template>
                 <!-- Budget Plan -->
@@ -250,7 +266,7 @@
                     </div>
                     <div class="form-group">
                         <label>Atas Nama</label>
-                        <input type="text" class="form-control" v-model="form.data['bank_account']['owner']">
+                        <input type="text" class="form-control" v-model="form.data['bank_account']['name']">
                     </div>
                 </template>
             </div>
@@ -384,7 +400,7 @@ export default {
                 data: {
                     'application_letter': {
                         'number': '',
-                        'date': null,
+                        'date': '',
                         'file_id': null,
                     },
                     'proposal_letter': {
@@ -436,21 +452,24 @@ export default {
                     'member': {
                         'file_id': null,
                     },
-                    'site_plan': {
+                    'location': {
                         'file_id': null,
                     },
-                    'activity_photo': {
+                    'activity': {
                         'file_id': null,
                     },
                     'budget_plan': {
                         'file_id': null,
-                        'value': null,
+                        'value': 0,
                     },
                     'bank_account': {
                         'bank_id': null,
                         'number': '',
-                        'owner': '',
+                        'name': '',
                     }
+                },
+                state: {
+                    success: null,
                 }
             }
         }
@@ -458,6 +477,87 @@ export default {
     methods: {
         toggleSubForm(id) {
             this.subForm.active = id
+        },
+        submit() {
+            this.form.state.success = null
+            axios.post('/ajax/jasmas/people_aspiration', this.form.data)
+                .then(res => {
+                    this.form.state.success = true
+                    this.form.data = {
+                        'application_letter': {
+                            'number': '',
+                            'date': '',
+                            'file_id': null,
+                        },
+                        'proposal_letter': {
+                            'affiliation': '',
+                            'file_id': null,
+                        },
+                        'ratification': {
+                            'file_id': null,
+                        },
+                        'domicile': {
+                            'address': '',
+                            'province_id': null,
+                            'city_id': null,
+                            'district_id': null,
+                            'subdistrict_id': null,
+                            'file_id': null,
+                        },
+                        'pokmas': {
+                            'name': '',
+                            'file_id': null,
+                        },
+                        'administrative_residence': {
+                            'file_id': null,
+                        },
+                        'aid': {
+                            'file_id': null,
+                        },
+                        'grant': {
+                            'file_id': null,
+                        },
+                        'land_readiness': {
+                            'file_id': null,
+                        },
+                        'chairman': {
+                            'file_id': null,
+                            'name': '',
+                            'phone': '',
+                        },
+                        'secretary': {
+                            'file_id': null,
+                            'name': '',
+                            'phone': '',
+                        },
+                        'treasurer': {
+                            'file_id': null,
+                            'name': '',
+                            'phone': '',
+                        },
+                        'member': {
+                            'file_id': null,
+                        },
+                        'location': {
+                            'file_id': null,
+                        },
+                        'activity': {
+                            'file_id': null,
+                        },
+                        'budget_plan': {
+                            'file_id': null,
+                            'value': 0,
+                        },
+                        'bank_account': {
+                            'bank_id': null,
+                            'number': '',
+                            'name': '',
+                        }
+                    }
+                })
+                .catch(err => {
+                    this.form.state.success = false
+                })
         }
     }
 }
