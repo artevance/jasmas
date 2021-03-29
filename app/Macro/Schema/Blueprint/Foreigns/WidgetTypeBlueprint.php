@@ -13,7 +13,7 @@ class WidgetTypeBlueprint implements BlueprintContract
     public static function register() : Closure
     {
         return (
-            function ($fieldName = 'widget_type_id') {
+            function ($fieldName = 'widget_type_id', $nullable = true) {
                 return $this->foreignId($fieldName)
                     ->constrained('widget_types')
                     ->onUpdate('cascade');

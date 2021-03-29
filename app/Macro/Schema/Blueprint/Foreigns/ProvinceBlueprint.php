@@ -13,7 +13,7 @@ class ProvinceBlueprint implements BlueprintContract
     public static function register() : Closure
     {
         return (
-            function ($fieldName = 'province_id', $nullable = false) {
+            function ($fieldName = 'province_id', $nullable = true) {
                 $table = $this->foreignId($fieldName);
                 if ($nullable) $table->nullable();
                 return $table->constrained('provinces')

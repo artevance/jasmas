@@ -13,7 +13,7 @@ class FileBlueprint implements BlueprintContract
     public static function register() : Closure
     {
         return (
-            function ($fieldName = 'file_id', $nullable = false) {
+            function ($fieldName = 'file_id', $nullable = true) {
                 $table = $this->foreignId($fieldName);
                 if ($nullable) $table->nullable();
                 return $table->constrained('files')

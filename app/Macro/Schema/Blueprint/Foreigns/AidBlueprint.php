@@ -13,7 +13,7 @@ class AidBlueprint implements BlueprintContract
     public static function register() : Closure
     {
         return (
-            function ($fieldName = 'aid_id', $nullable = false) {
+            function ($fieldName = 'aid_id', $nullable = true) {
                 $table = $this->foreignId($fieldName);
                 if ($nullable) $table->nullable();
                 return $table->constrained('aids')

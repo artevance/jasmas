@@ -13,7 +13,7 @@ class ApplicationLetterBlueprint implements BlueprintContract
     public static function register() : Closure
     {
         return (
-            function ($fieldName = 'application_letter_id', $nullable = false) {
+            function ($fieldName = 'application_letter_id', $nullable = true) {
                 $table = $this->foreignId($fieldName);
                 if ($nullable) $table->nullable();
                 return $table->constrained('application_letters')

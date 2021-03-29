@@ -13,7 +13,7 @@ class CityBlueprint implements BlueprintContract
     public static function register() : Closure
     {
         return (
-            function ($fieldName = 'city_id', $nullable = false) {
+            function ($fieldName = 'city_id', $nullable = true) {
                 $table = $this->foreignId($fieldName);
                 if ($nullable) $table->nullable();
                 return $table->constrained('cities')

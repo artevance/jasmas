@@ -13,7 +13,7 @@ class LocationBlueprint implements BlueprintContract
     public static function register() : Closure
     {
         return (
-            function ($fieldName = 'location_id', $nullable = false) {
+            function ($fieldName = 'location_id', $nullable = true) {
                 $table = $this->foreignId($fieldName);
                 if ($nullable) $table->nullable();
                 return $table->constrained('locations')

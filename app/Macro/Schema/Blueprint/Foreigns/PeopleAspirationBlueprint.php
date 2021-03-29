@@ -13,7 +13,7 @@ class PeopleAspirationBlueprint implements BlueprintContract
     public static function register() : Closure
     {
         return (
-            function ($fieldName = 'people_aspiration_id', $nullable = false) {
+            function ($fieldName = 'people_aspiration_id', $nullable = true) {
                 $table = $this->foreignId($fieldName);
                 if ($nullable) $table->nullable();
                 return $table->constrained('people_aspirations')

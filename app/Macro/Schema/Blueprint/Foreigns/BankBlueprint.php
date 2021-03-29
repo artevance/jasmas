@@ -13,7 +13,7 @@ class BankBlueprint implements BlueprintContract
     public static function register() : Closure
     {
         return (
-            function ($fieldName = 'bank_id', $nullable = false) {
+            function ($fieldName = 'bank_id', $nullable = true) {
                 $table = $this->foreignId($fieldName);
                 if ($nullable) $table->nullable();
                 return $table->constrained('banks')

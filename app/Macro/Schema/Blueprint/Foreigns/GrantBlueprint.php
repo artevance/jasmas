@@ -13,7 +13,7 @@ class GrantBlueprint implements BlueprintContract
     public static function register() : Closure
     {
         return (
-            function ($fieldName = 'grant_id', $nullable = false) {
+            function ($fieldName = 'grant_id', $nullable = true) {
                 $table = $this->foreignId($fieldName);
                 if ($nullable) $table->nullable();
                 return $table->constrained('grants')

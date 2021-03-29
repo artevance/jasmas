@@ -13,7 +13,7 @@ class FeatureBlueprint implements BlueprintContract
     public static function register() : Closure
     {
         return (
-            function ($fieldName = 'feature_id', $nullable = false) {
+            function ($fieldName = 'feature_id', $nullable = true) {
                 $table = $this->foreignId($fieldName);
                 if ($nullable) $table->nullable();
                 return $table->constrained('features')

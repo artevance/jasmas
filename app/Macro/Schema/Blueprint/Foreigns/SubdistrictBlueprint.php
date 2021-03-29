@@ -13,7 +13,7 @@ class SubdistrictBlueprint implements BlueprintContract
     public static function register() : Closure
     {
         return (
-            function ($fieldName = 'subdistrict_id', $nullable = false) {
+            function ($fieldName = 'subdistrict_id', $nullable = true) {
                 $table = $this->foreignId($fieldName);
                 if ($nullable) $table->nullable();
                 return $table->constrained('subdistricts')
