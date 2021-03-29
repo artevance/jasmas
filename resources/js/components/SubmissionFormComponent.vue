@@ -74,7 +74,7 @@
                     </div>
                     <div class="form-group">
                         <label>Surat Permohonan</label>
-                        <file-picker-component></file-picker-component>
+                        <file-picker-component v-model="form.data['application_letter']['file_id']" />
                     </div>
                 </template>
                 <!-- Proposal Letter Form -->
@@ -253,7 +253,7 @@
                         <input type="text" class="form-control">
                     </div>
                 </template>
-
+                {{ form.data }}
 
             </div>
         </div>
@@ -382,6 +382,13 @@ export default {
                     },
                 ]
             },
+            form: {
+                data: {
+                    'application_letter': {
+                        'file_id': null,
+                    }
+                }
+            }
         }
     },
     methods: {
