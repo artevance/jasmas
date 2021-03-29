@@ -42,7 +42,7 @@ class Kernel extends HttpKernel
 
         'ajax' => [
             \Laravel\Sanctum\Http\Middleware\EnsureFrontendRequestsAreStateful::class,
-            \App\Http\Middleware\AuthenticateGuest::class,
+            // \App\Http\Middleware\AuthenticateGuest::class,
             \Illuminate\Routing\Middleware\SubstituteBindings::class,
         ],
         'api' => [
