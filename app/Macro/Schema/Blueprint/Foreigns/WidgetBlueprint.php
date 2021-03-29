@@ -14,9 +14,9 @@ class WidgetBlueprint implements BlueprintContract
     {
         return (
             function ($fieldName = 'widget_id', $nullable = false) {
-                $table = $this->foreignId('widget_id');
+                $table = $this->foreignId($fieldName);
                 if ($nullable) $table->nullable();
-                return $table->constrained()
+                return $table->constrained('widgets')
                     ->onUpdate('cascade');
             }
         );

@@ -14,9 +14,9 @@ class FeatureBlueprint implements BlueprintContract
     {
         return (
             function ($fieldName = 'feature_id', $nullable = false) {
-                $table = $this->foreignId('feature_id');
+                $table = $this->foreignId($fieldName);
                 if ($nullable) $table->nullable();
-                return $table->constrained()
+                return $table->constrained('features')
                     ->onUpdate('cascade');
             }
         );

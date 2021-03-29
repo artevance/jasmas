@@ -14,9 +14,9 @@ class ReportBlueprint implements BlueprintContract
     {
         return (
             function ($fieldName = 'report_id', $nullable = false) {
-                $table = $this->foreignId('report_id');
+                $table = $this->foreignId($fieldName);
                 if ($nullable) $table->nullable();
-                return $table->constrained()
+                return $table->constrained('reports')
                     ->onUpdate('cascade');
             }
         );

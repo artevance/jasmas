@@ -14,9 +14,9 @@ class RoleBlueprint implements BlueprintContract
     {
         return (
             function ($fieldName = 'role_id', $nullable = false) {
-                $table = $this->foreignId('role_id');
+                $table = $this->foreignId($fieldName);
                 if ($nullable) $table->nullable();
-                return $table->constrained()
+                return $table->constrained('roles')
                     ->onUpdate('cascade');
             }
         );

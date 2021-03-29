@@ -14,8 +14,8 @@ class WidgetTypeBlueprint implements BlueprintContract
     {
         return (
             function ($fieldName = 'widget_type_id') {
-                return $this->foreignId('widget_type_id')
-                    ->constrained()
+                return $this->foreignId($fieldName)
+                    ->constrained('widget_types')
                     ->onUpdate('cascade');
             }
         );
