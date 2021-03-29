@@ -44,8 +44,16 @@ class Kernel
             'role' => Schema\Blueprint\Foreigns\RoleBlueprint::class,
             'subdistrict' => Schema\Blueprint\Foreigns\SubdistrictBlueprint::class,
             'user' => Schema\Blueprint\Foreigns\UserBlueprint::class,
+            'userAccept' => Schema\Blueprint\Foreigns\UserAcceptBlueprint::class,
             'userCreate' => Schema\Blueprint\Foreigns\UserCreateBlueprint::class,
+            'userCancel' => Schema\Blueprint\Foreigns\UserCancelBlueprint::class,
             'userDelete' => Schema\Blueprint\Foreigns\UserDeleteBlueprint::class,
+            'userDisburse' => Schema\Blueprint\Foreigns\UserDisburseBlueprint::class,
+            'userFifth' => Schema\Blueprint\Foreigns\UserFifthBlueprint::class,
+            'userFirst' => Schema\Blueprint\Foreigns\UserFirstBlueprint::class,
+            'userFourth' => Schema\Blueprint\Foreigns\UserFourthBlueprint::class,
+            'userSecond' => Schema\Blueprint\Foreigns\UserSecondBlueprint::class,
+            'userThird' => Schema\Blueprint\Foreigns\UserThirdBlueprint::class,
             'userTimestamps' => Schema\Blueprint\Foreigns\UserTimestampsBlueprint::class,
             'userUpdate' => Schema\Blueprint\Foreigns\UserUpdateBlueprint::class,
             'widget' => Schema\Blueprint\Foreigns\WidgetBlueprint::class,
@@ -66,6 +74,15 @@ class Kernel
             // Text
             'fileName' => Schema\Blueprint\Text\FileNameBlueprint::class,
             'storageDir' => Schema\Blueprint\Text\StorageDirBlueprint::class,
+            // Timestamps
+            'acceptedAt' => Schema\Blueprint\Timestamps\AcceptedAtBlueprint::class,
+            'cancelledAt' => Schema\Blueprint\Timestamps\CancelledAtBlueprint::class,
+            'disbursedAt' => Schema\Blueprint\Timestamps\DisbursedAtBlueprint::class,
+            'fifthReviewedAt' => Schema\Blueprint\Timestamps\FifthReviewedAtBlueprint::class,
+            'firstReviewedAt' => Schema\Blueprint\Timestamps\FirstReviewedAtBlueprint::class,
+            'fourthReviewedAt' => Schema\Blueprint\Timestamps\FourthReviewedAtBlueprint::class,
+            'secondReviewedAt' => Schema\Blueprint\Timestamps\SecondReviewedAtBlueprint::class,
+            'thirdReviewedAt' => Schema\Blueprint\Timestamps\ThirdReviewedAtBlueprint::class,
         ],
     ];
 }
