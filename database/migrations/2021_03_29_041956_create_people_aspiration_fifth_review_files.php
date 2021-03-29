@@ -15,7 +15,7 @@ class CreatePeopleAspirationFifthReviewFiles extends Migration
     {
         Schema::create('people_aspiration_fifth_review_files', function (Blueprint $table) {
             $table->id();
-            $table->peopleAspiration();
+            $table->peopleAspiration()->index('long_index_4');
             $table->file();
             $table->description();
             $table->userTimestamps();

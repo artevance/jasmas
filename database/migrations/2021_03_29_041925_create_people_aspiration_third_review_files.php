@@ -15,7 +15,7 @@ class CreatePeopleAspirationThirdReviewFiles extends Migration
     {
         Schema::create('people_aspiration_third_review_files', function (Blueprint $table) {
             $table->id();
-            $table->peopleAspiration();
+            $table->peopleAspiration()->index('long_index_2');
             $table->file();
             $table->description();
             $table->userTimestamps();

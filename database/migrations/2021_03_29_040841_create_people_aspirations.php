@@ -15,7 +15,6 @@ class CreatePeopleAspirations extends Migration
     {
         Schema::create('people_aspirations', function (Blueprint $table) {
             $table->id();
-            $table->standardDate();
             $table->string('activity_type', 500);
             $table->note();
             $table->string('disposition', 500);

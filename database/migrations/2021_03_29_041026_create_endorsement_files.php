@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateEdorsementFiles extends Migration
+class CreateEndorsementFiles extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreateEdorsementFiles extends Migration
      */
     public function up()
     {
-        Schema::create('edorsement_files', function (Blueprint $table) {
+        Schema::create('endorsement_files', function (Blueprint $table) {
             $table->id();
             $table->endorsement();
             $table->file();

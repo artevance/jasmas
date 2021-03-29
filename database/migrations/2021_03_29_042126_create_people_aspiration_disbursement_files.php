@@ -15,7 +15,7 @@ class CreatePeopleAspirationDisbursementFiles extends Migration
     {
         Schema::create('people_aspiration_disbursement_files', function (Blueprint $table) {
             $table->id();
-            $table->peopleAspirationDisbursement();
+            $table->peopleAspirationDisbursement()->index('long_index_6');
             $table->file();
             $table->description();
             $table->userTimestamps();

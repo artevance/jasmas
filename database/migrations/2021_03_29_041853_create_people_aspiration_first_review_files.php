@@ -15,7 +15,7 @@ class CreatePeopleAspirationFirstReviewFiles extends Migration
     {
         Schema::create('people_aspiration_first_review_files', function (Blueprint $table) {
             $table->id();
-            $table->peopleAspiration();
+            $table->peopleAspiration()->index('long_index_1');
             $table->file();
             $table->description();
             $table->userTimestamps();

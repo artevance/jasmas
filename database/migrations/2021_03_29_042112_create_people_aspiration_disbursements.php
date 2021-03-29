@@ -15,7 +15,7 @@ class CreatePeopleAspirationDisbursements extends Migration
     {
         Schema::create('people_aspiration_disbursements', function (Blueprint $table) {
             $table->id();
-            $table->peopleAspiration();
+            $table->peopleAspiration()->index('long_index_5');
             $table->boolean('state');
             $table->userTimestamps();
             $table->userDelete();

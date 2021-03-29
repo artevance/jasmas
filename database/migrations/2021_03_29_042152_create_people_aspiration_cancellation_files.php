@@ -15,7 +15,7 @@ class CreatePeopleAspirationCancellationFiles extends Migration
     {
         Schema::create('people_aspiration_cancellation_files', function (Blueprint $table) {
             $table->id();
-            $table->peopleAspiration();
+            $table->peopleAspiration()->index('long_index_7');
             $table->file();
             $table->description();
             $table->userTimestamps();
