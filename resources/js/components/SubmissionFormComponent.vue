@@ -66,11 +66,11 @@
                 <template v-if="subForm.active == '1'">
                     <div class="form-group">
                         <label>Nomor Surat Permohonan</label>
-                        <input type="text" class="form-control">
+                        <input type="text" class="form-control" v-model="form.data['application_letter']['number']">
                     </div>
                     <div class="form-group">
                         <label>Tanggal Surat</label>
-                        <input type="text" class="form-control">
+                        <input type="text" class="form-control" v-model="form.data['application_letter']['date']">
                     </div>
                     <div class="form-group">
                         <label>Surat Permohonan</label>
@@ -81,180 +81,178 @@
                 <template v-else-if="subForm.active == '2'">
                     <div class="form-group">
                         <label>Afiliasi</label>
-                        <input type="text" class="form-control">
+                        <input type="text" class="form-control" v-model="form.data['proposal_letter']['affiliation']">
                     </div>
                     <div class="form-group">
                         <label>Proposal</label>
-                        <file-picker-component></file-picker-component>
+                        <file-picker-component v-model="form.data['proposal_letter']['file_id']" />
                     </div>
                 </template>
                 <!-- Ratification Form -->
                 <template v-else-if="subForm.active == '3a'">
                     <div class="form-group">
                         <label>Surat Pengesahan / Penetapan SKPD Kab / Kota / Camat</label>
-                        <file-picker-component></file-picker-component>
+                        <file-picker-component v-model="form.data['ratification']['file_id']" />
                     </div>
                 </template>
                 <!-- Domicile Form -->
                 <template v-else-if="subForm.active == '3b'">
                     <div class="form-group">
                         <label>Alamat Lengkap</label>
-                        <input type="text" class="form-control">
+                        <input type="text" class="form-control" v-model="form.data['domicile']['address']">
                     </div>
                     <div class="form-group">
                         <label>Provinsi</label>
-                        <select class="form-control"></select>
+                        <select class="form-control" v-model="form.data['domicile']['province_id']"></select>
                     </div>
                     <div class="form-group">
                         <label>Kab / Kota</label>
-                        <select class="form-control"></select>
+                        <select class="form-control" v-model="form.data['domicile']['city_id']"></select>
                     </div>
                     <div class="form-group">
                         <label>Kecamatan</label>
-                        <select class="form-control"></select>
+                        <select class="form-control" v-model="form.data['domicile']['district_id']"></select>
                     </div>
                     <div class="form-group">
                         <label>Kelurahan</label>
-                        <select class="form-control"></select>
+                        <select class="form-control" v-model="form.data['domicile']['subdistrict_id']"></select>
                     </div>
                     <div class="form-group">
                         <label>Surat Keterangan Domisili (Desa)</label>
-                        <file-picker-component></file-picker-component>
+                        <file-picker-component v-model="form.data['domicile']['file_id']" />
                     </div>
                 </template>
                 <!-- Pokmas Form -->
                 <template v-else-if="subForm.active == '3c'">
                     <div class="form-group">
                         <label>Nama Pokmas</label>
-                        <input type="text" class="form-control">
+                        <input type="text" class="form-control" v-model="form.data['pokmas']['name']">
                     </div>
                     <div class="form-group">
                         <label>Mempunyai kepengurusan yang jelas</label>
-                        <file-picker-component></file-picker-component>
+                        <file-picker-component v-model="form.data['pokmas']['file_id']" />
                     </div>
                 </template>
                 <!-- Administrative Residence Form -->
                 <template v-else-if="subForm.active == '3d'">
                     <div class="form-group">
                         <label>Berpendudukan di wilayah administrasi</label>
-                        <file-picker-component></file-picker-component>
+                        <file-picker-component v-model="form.data['administrative_residence']['file_id']" />
                     </div>
                 </template>
                 <!-- Aid Form -->
                 <template v-else-if="subForm.active == '4a'">
                     <div class="form-group">
                         <label>Surat Pernyataan Tidak Menerima Bantuan dari APBD Provinsi Jawa Timur 1 (satu) Tahun Anggaran sebelumnya</label>
-                        <file-picker-component></file-picker-component>
+                        <file-picker-component v-model="form.data['aid']['file_id']" />
                     </div>
                 </template>
                 <!-- Grant Form -->
                 <template v-else-if="subForm.active == '4b'">
                     <div class="form-group">
                         <label>Surat Pernyataan Tidak Menerima Bantuan Hibah dari APBD Provinsi Jawa Timur secara terus menerus, kecuali ditentukan peraturan perundang-undangan</label>
-                        <file-picker-component></file-picker-component>
+                        <file-picker-component v-model="form.data['grant']['file_id']" />
                     </div>
                 </template>
                 <!-- Land Readiness -->
                 <template v-else-if="subForm.active == '5'">
                     <div class="form-group">
                         <label>Surat Pernyataan Kesiapan Lahan tidak bersengketa diketahui oleh Pejabat setempat (Kades/Lurah)</label>
-                        <file-picker-component></file-picker-component>
+                        <file-picker-component v-model="form.data['land_readiness']['file_id']" />
                     </div>
                 </template>
                 <!-- Chairman Form -->
                 <template v-else-if="subForm.active == '6a'">
                     <div class="form-group">
                         <label>KTP Ketua</label>
-                        <file-picker-component></file-picker-component>
+                        <file-picker-component v-model="form.data['chairman']['file_id']" />
                     </div>
                     <div class="form-group">
                         <label>Nama</label>
-                        <input type="text" class="form-control">
+                        <input type="text" class="form-control" v-model="form.data['chairman']['name']">
                     </div>
                     <div class="form-group">
                         <label>No. Telp</label>
-                        <input type="text" class="form-control">
+                        <input type="text" class="form-control" v-model="form.data['chairman']['phone']">
                     </div>
                 </template>
                 <!-- Secretary Form -->
                 <template v-else-if="subForm.active == '6b'">
                     <div class="form-group">
                         <label>KTP Sekretaris</label>
-                        <file-picker-component></file-picker-component>
+                        <file-picker-component v-model="form.data['secretary']['file_id']" />
                     </div>
                     <div class="form-group">
                         <label>Nama</label>
-                        <input type="text" class="form-control">
+                        <input type="text" class="form-control" v-model="form.data['secretary']['name']">
                     </div>
                     <div class="form-group">
                         <label>No. Telp</label>
-                        <input type="text" class="form-control">
+                        <input type="text" class="form-control" v-model="form.data['secretary']['phone']">
                     </div>
                 </template>
                 <!-- Treasurer Form -->
                 <template v-else-if="subForm.active == '6c'">
                     <div class="form-group">
                         <label>KTP Bendahara</label>
-                        <file-picker-component></file-picker-component>
+                        <file-picker-component v-model="form.data['treasurer']['file_id']" />
                     </div>
                     <div class="form-group">
                         <label>Nama</label>
-                        <input type="text" class="form-control">
+                        <input type="text" class="form-control" v-model="form.data['treasurer']['name']">
                     </div>
                     <div class="form-group">
                         <label>No. Telp</label>
-                        <input type="text" class="form-control">
+                        <input type="text" class="form-control" v-model="form.data['treasurer']['phone']">
                     </div>
                 </template>
                 <!-- Member Form -->
                 <template v-else-if="subForm.active == '6d'">
                     <div class="form-group">
                         <label>KTP Anggota</label>
-                        <file-picker-component></file-picker-component>
+                        <file-picker-component v-model="form.data['member']['file_id']" />
                     </div>
                 </template>
                 <!-- Site Plan Form -->
                 <template v-else-if="subForm.active == '7'">
                     <div class="form-group">
                         <label>Denah Lokasi Pekerjaan</label>
-                        <file-picker-component></file-picker-component>
+                        <file-picker-component v-model="form.data['site_plan']['file_id']" />
                     </div>
                 </template>
                 <!-- Activity Photo Form -->
                 <template v-else-if="subForm.active == '8'">
                     <div class="form-group">
                         <label>Foto Lokasi Kegiatan (Foto 0%)</label>
-                        <file-picker-component></file-picker-component>
+                        <file-picker-component v-model="form.data['activity_photo']['file_id']" />
                     </div>
                 </template>
                 <!-- Budget Plan -->
                 <template v-else-if="subForm.active == '9a'">
                     <div class="form-group">
                         <label>Nilai RAB</label>
-                        <input type="number" class="form-control">
+                        <input type="number" class="form-control" v-model="form.data['budget_plan']['value']">
                     </div>
                     <div class="form-group">
                         <label>Upload RAB</label>
-                        <file-picker-component></file-picker-component>
+                        <file-picker-component v-model="form.data['budget_plan']['file_id']" />
                     </div>
                 </template>
                 <!-- Bank Account -->
                 <template v-else-if="subForm.active == '10'">
                     <div class="form-group">
                         <label>Bank</label>
-                        <select class="form-control"></select>
+                        <select class="form-control" v-model="form.data['bank_account']['bank_id']"></select>
                     </div>
                     <div class="form-group">
                         <label>Nomor Rekening</label>
-                        <input type="text" class="form-control">
+                        <input type="text" class="form-control" v-model="form.data['bank_account']['number']">
                     </div>
                     <div class="form-group">
                         <label>Atas Nama</label>
-                        <input type="text" class="form-control">
+                        <input type="text" class="form-control" v-model="form.data['bank_account']['owner']">
                     </div>
                 </template>
-                {{ form.data }}
-
             </div>
         </div>
     </form>
@@ -385,7 +383,73 @@ export default {
             form: {
                 data: {
                     'application_letter': {
+                        'number': '',
+                        'date': null,
                         'file_id': null,
+                    },
+                    'proposal_letter': {
+                        'affiliation': '',
+                        'file_id': null,
+                    },
+                    'ratification': {
+                        'file_id': null,
+                    },
+                    'domicile': {
+                        'address': '',
+                        'province_id': null,
+                        'city_id': null,
+                        'district_id': null,
+                        'subdistrict_id': null,
+                        'file_id': null,
+                    },
+                    'pokmas': {
+                        'name': '',
+                        'file_id': null,
+                    },
+                    'administrative_residence': {
+                        'file_id': null,
+                    },
+                    'aid': {
+                        'file_id': null,
+                    },
+                    'grant': {
+                        'file_id': null,
+                    },
+                    'land_readiness': {
+                        'file_id': null,
+                    },
+                    'chairman': {
+                        'file_id': null,
+                        'name': '',
+                        'phone': '',
+                    },
+                    'secretary': {
+                        'file_id': null,
+                        'name': '',
+                        'phone': '',
+                    },
+                    'treasurer': {
+                        'file_id': null,
+                        'name': '',
+                        'phone': '',
+                    },
+                    'member': {
+                        'file_id': null,
+                    },
+                    'site_plan': {
+                        'file_id': null,
+                    },
+                    'activity_photo': {
+                        'file_id': null,
+                    },
+                    'budget_plan': {
+                        'file_id': null,
+                        'value': null,
+                    },
+                    'bank_account': {
+                        'bank_id': null,
+                        'number': '',
+                        'owner': '',
                     }
                 }
             }
