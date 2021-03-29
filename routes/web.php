@@ -13,4 +13,4 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::any('{any}', 'AppController@index')->where('any', '.*');
+Route::get('submission', 'SubmissionController@index');
