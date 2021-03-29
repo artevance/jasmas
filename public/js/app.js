@@ -1869,6 +1869,77 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/FilePickerComponent.vue?vue&type=script&lang=js&":
+/*!**************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/FilePickerComponent.vue?vue&type=script&lang=js& ***!
+  \**************************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+//
+//
+//
+//
+//
+//
+//
+//
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  props: {
+    value: {
+      "default": null
+    }
+  },
+  data: function data() {
+    return {
+      fileId: null
+    };
+  },
+  methods: {
+    evaluateFile: function evaluateFile(e) {
+      if (e.target.files.length) {
+        this.uploadFile(e.target.files[0]);
+      } else {
+        this.deleteFile(e);
+      }
+    },
+    uploadFile: function uploadFile(file) {
+      var _this = this;
+
+      var form = new FormData();
+      form.append('file', file);
+      axios.post('/ajax/storage/file', form).then(function (res) {
+        _this.fileId = res.data.id;
+
+        _this.$emit('input', _this.fileId);
+      });
+    },
+    deleteFile: function deleteFile() {
+      var _this2 = this;
+
+      var e = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : null;
+      axios["delete"]('/ajax/storage/file', {
+        data: {
+          id: this.fileId
+        }
+      }).then(function (res) {})["catch"](function (err) {})["finally"](function () {
+        _this2.fileId = null;
+
+        _this2.$emit('input', _this2.fileId);
+      });
+    }
+  },
+  created: function created() {
+    this.fileId = this.value;
+  }
+});
+
+/***/ }),
+
 /***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/SubmissionFormComponent.vue?vue&type=script&lang=js&":
 /*!******************************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/SubmissionFormComponent.vue?vue&type=script&lang=js& ***!
@@ -2236,6 +2307,13 @@ __webpack_require__.r(__webpack_exports__);
           number: '10.',
           title: 'Nomor Rekening'
         }]
+      },
+      form: {
+        data: {
+          'application_letter': {
+            'file_id': null
+          }
+        }
       }
     };
   },
@@ -37766,15 +37844,17 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony import */ var _FilePickerComponent_vue_vue_type_template_id_7a658950___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./FilePickerComponent.vue?vue&type=template&id=7a658950& */ "./resources/js/components/FilePickerComponent.vue?vue&type=template&id=7a658950&");
-/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! !../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+/* harmony import */ var _FilePickerComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./FilePickerComponent.vue?vue&type=script&lang=js& */ "./resources/js/components/FilePickerComponent.vue?vue&type=script&lang=js&");
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! !../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
 
-var script = {}
+
+
 
 
 /* normalize component */
 ;
-var component = (0,_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_1__.default)(
-  script,
+var component = (0,_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__.default)(
+  _FilePickerComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__.default,
   _FilePickerComponent_vue_vue_type_template_id_7a658950___WEBPACK_IMPORTED_MODULE_0__.render,
   _FilePickerComponent_vue_vue_type_template_id_7a658950___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns,
   false,
@@ -37880,6 +37960,22 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_ExampleComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./ExampleComponent.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/ExampleComponent.vue?vue&type=script&lang=js&");
  /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_ExampleComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__.default); 
+
+/***/ }),
+
+/***/ "./resources/js/components/FilePickerComponent.vue?vue&type=script&lang=js&":
+/*!**********************************************************************************!*\
+  !*** ./resources/js/components/FilePickerComponent.vue?vue&type=script&lang=js& ***!
+  \**********************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_FilePickerComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./FilePickerComponent.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/FilePickerComponent.vue?vue&type=script&lang=js&");
+ /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_FilePickerComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__.default); 
 
 /***/ }),
 
@@ -38033,7 +38129,15 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "div",
-    [[_c("input", { staticClass: "form-control", attrs: { type: "file" } })]],
+    [
+      [
+        _c("input", {
+          staticClass: "form-control",
+          attrs: { type: "file" },
+          on: { input: _vm.evaluateFile }
+        })
+      ]
+    ],
     2
   )
 }
@@ -38239,7 +38343,19 @@ var render = function() {
                   [
                     _c("label", [_vm._v("Surat Permohonan")]),
                     _vm._v(" "),
-                    _c("file-picker-component")
+                    _c("file-picker-component", {
+                      model: {
+                        value: _vm.form.data["application_letter"]["file_id"],
+                        callback: function($$v) {
+                          _vm.$set(
+                            _vm.form.data["application_letter"],
+                            "file_id",
+                            $$v
+                          )
+                        },
+                        expression: "form.data['application_letter']['file_id']"
+                      }
+                    })
                   ],
                   1
                 )
@@ -38487,7 +38603,8 @@ var render = function() {
               ]
             : _vm.subForm.active == "10"
             ? [_vm._m(19), _vm._v(" "), _vm._m(20), _vm._v(" "), _vm._m(21)]
-            : _vm._e()
+            : _vm._e(),
+          _vm._v("\n            " + _vm._s(_vm.form.data) + "\n\n        ")
         ],
         2
       )
