@@ -5,7 +5,7 @@ namespace App\Macro\Schema\Blueprint\Decimal;
 use App\Foundation\Macro\Schema\BlueprintContract;
 use Closure;
 
-class ValueDateBlueprint implements BlueprintContract
+class ValueBlueprint implements BlueprintContract
 {
     /**
      * @return \Closure

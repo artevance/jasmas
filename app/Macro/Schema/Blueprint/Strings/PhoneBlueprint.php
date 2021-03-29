@@ -5,7 +5,7 @@ namespace App\Macro\Schema\Blueprint\Strings;
 use App\Foundation\Macro\Schema\BlueprintContract;
 use Closure;
 
-class NikBlueprint implements BlueprintContract
+class PhoneBlueprint implements BlueprintContract
 {
     /**
      * @return \Closure

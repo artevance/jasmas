@@ -5,7 +5,7 @@ namespace App\Macro\Schema\Blueprint\Foreigns;
 use App\Foundation\Macro\Schema\BlueprintContract;
 use Closure;
 
-class FeatureBlueprint implements BlueprintContract
+class FileBlueprint implements BlueprintContract
 {
     /**
      * @return \Closure
