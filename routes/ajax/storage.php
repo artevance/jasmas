@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 
-Route::prefix('file', function () {
+Route::prefix('file')->group(function () {
     Route::get('', 'FileController@index');
     Route::get('{id}', 'FileController@show');
     Route::get('fetch/{id}', 'FileController@fetch');
@@ -10,7 +10,7 @@ Route::prefix('file', function () {
     Route::delete('', 'FileController@destroy');
 });
 
-Route::prefix('image', function () {
+Route::prefix('image')->group(function () {
     Route::get('', 'ImageController@index');
     Route::get('{id}', 'ImageController@show');
     Route::get('fetch/{id}', 'ImageController@fetch');
