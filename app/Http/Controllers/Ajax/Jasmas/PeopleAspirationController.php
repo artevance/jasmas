@@ -26,10 +26,10 @@ use App\Models\Jasmas\{
     Secretary,
     Treasurer,
     Member,
-    SitePlan,
-    SitePlanFile,
-    ActivityPhoto,
-    ActivityPhotoFile,
+    Location,
+    LocationFile,
+    Activity,
+    ActivityFile,
     BudgetPlan,
     BudgetPlanFile,
     BankAccount,
@@ -44,12 +44,13 @@ class PeopleAspirationController extends Controller
             $peopleAspiration->activity_type = $request->input('activity_type', '');
             $peopleAspiration->note = $request->input('note', '');
             $peopleAspiration->disposition = $request->input('disposition', '');
+            $peopleAspiration->description = $request->input('description', '');
             $peopleAspiration->save();
 
             $applicationLetter = new ApplicationLetter;
             $applicationLetter->people_aspiration_id = $peopleAspiration->id;
             $applicationLetter->number = $request->input('application_letter.number', '');
-            $applicationLetter->date = $request->input('application_letter.date', '');
+            $applicationLetter->date = date('Y-m-d', strtotime($request->input('application_letter.date')));
             $applicationLetter->description = '';
             $applicationLetter->save();
 
@@ -141,48 +142,58 @@ class PeopleAspirationController extends Controller
             $grantFile->save();
 
             $chairman = new Chairman;
+            $chairman->nik = '';
             $chairman->name = $request->input('chairman.name', '');
             $chairman->phone = $request->input('chairman.phone', '');
             $chairman->file_id = $request->input('chairman.file_id', null);
+            $chairman->description = '';
             $chairman->save();
 
             $secretary = new Secretary;
+            $secretary->nik = '';
             $secretary->name = $request->input('secretary.name', '');
             $secretary->phone = $request->input('secretary.phone', '');
             $secretary->file_id = $request->input('secretary.file_id', null);
-            $chairman->save();
+            $secretary->description = '';
+            $secretary->save();
 
             $treasurer = new Treasurer;
+            $treasurer->nik = '';
             $treasurer->name = $request->input('treasurer.name', '');
             $treasurer->phone = $request->input('treasurer.phone', '');
             $treasurer->file_id = $request->input('treasurer.file_id', null);
-            $chairman->save();
+            $treasurer->description = '';
+            $treasurer->save();
 
             $member = new Member;
+            $member->nik = '';
+            $member->name = '';
+            $member->phone = '';
             $member->file_id = $request->input('member.file_id', null);
-            $chairman->save();
+            $member->description = '';
+            $member->save();
 
-            $sitePlan = new SitePlan;
-            $sitePlan->people_aspiration_id = $peopleAspiration->id;
-            $sitePlan->description = '';
-            $sitePlan->save();
+            $location = new Location;
+            $location->people_aspiration_id = $peopleAspiration->id;
+            $location->description = '';
+            $location->save();
 
-            $sitePlanFile = new SitePlanFile;
-            $sitePlanFile->site_plan_id = $sitePlan->id;
-            $sitePlanFile->file_id = $request->input('site_plan.file_id', null);
-            $sitePlanFile->description = '';
-            $sitePlanFile->save();
+            $locationFile = new LocationFile;
+            $locationFile->location_id = $location->id;
+            $locationFile->file_id = $request->input('location.file_id', null);
+            $locationFile->description = '';
+            $locationFile->save();
 
-            $activityPhoto = new ActivityPhoto;
-            $activityPhoto->people_aspiration_id = $peopleAspiration->id;
-            $activityPhoto->description = '';
-            $activityPhoto->save();
+            $activity = new Activity;
+            $activity->people_aspiration_id = $peopleAspiration->id;
+            $activity->description = '';
+            $activity->save();
 
-            $activityPhotoFile = new ActivityPhotoFile;
-            $activityPhotoFile->activity_photo_id = $activityPhoto->id;
-            $activityPhotoFile->file_id = $request->input('activity_photo.file_id', null);
-            $activityPhotoFile->description = '';
-            $activityPhotoFile->save();
+            $activityFile = new ActivityFile;
+            $activityFile->activity_id = $activity->id;
+            $activityFile->file_id = $request->input('activity.file_id', null);
+            $activityFile->description = '';
+            $activityFile->save();
 
             $budgetPlan = new BudgetPlan;
             $budgetPlan->people_aspiration_id = $peopleAspiration->id;
@@ -199,7 +210,8 @@ class PeopleAspirationController extends Controller
             $bankAccount = new BankAccount;
             $bankAccount->bank_id = $request->input('bank_account.bank_id', null);
             $bankAccount->number = $request->input('bank_account.number', '');
-            $bankAccount->owner = $request->input('bank_account.owner', '');
+            $bankAccount->name = $request->input('bank_account.name', '');
+            $bankAccount->description = '';
             $bankAccount->save();
         });
     }
